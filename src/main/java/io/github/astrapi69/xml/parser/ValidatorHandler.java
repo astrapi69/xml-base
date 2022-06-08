@@ -43,7 +43,8 @@ public class ValidatorHandler extends DefaultHandler
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override public void error(final SAXParseException exception) throws SAXException
+	@Override
+	public void error(final SAXParseException exception) throws SAXException
 	{
 		validationError = true;
 		saxParseException = exception;
@@ -52,7 +53,8 @@ public class ValidatorHandler extends DefaultHandler
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override public void fatalError(final SAXParseException exception) throws SAXException
+	@Override
+	public void fatalError(final SAXParseException exception) throws SAXException
 	{
 		validationError = true;
 		saxParseException = exception;
@@ -91,7 +93,8 @@ public class ValidatorHandler extends DefaultHandler
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override public void warning(final SAXParseException exception) throws SAXException
+	@Override
+	public void warning(final SAXParseException exception) throws SAXException
 	{
 		this.saxParseException = exception;
 	}

@@ -24,13 +24,13 @@
  */
 package io.github.astrapi69.xml.parser;
 
-import org.junit.jupiter.api.Test;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
+import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 
 /**
  * The unit test class for the class {@link ValidatorHandler}
@@ -44,7 +44,8 @@ public class ValidatorHandlerTest
 	 * @throws SAXException
 	 *             Any SAX exception, possibly wrapping another exception
 	 */
-	@Test public void testErrorSAXParseException() throws SAXException
+	@Test
+	public void testErrorSAXParseException() throws SAXException
 	{
 		SAXParseException actual;
 		SAXParseException expected;
@@ -65,7 +66,8 @@ public class ValidatorHandlerTest
 	 * @throws SAXException
 	 *             Any SAX exception, possibly wrapping another exception
 	 */
-	@Test public void testFatalErrorSAXParseException() throws SAXException
+	@Test
+	public void testFatalErrorSAXParseException() throws SAXException
 	{
 		SAXParseException actual;
 		SAXParseException expected;
@@ -83,7 +85,8 @@ public class ValidatorHandlerTest
 	/**
 	 * Test method for {@link ValidatorHandler#isValid()}.
 	 */
-	@Test public void testIsValid()
+	@Test
+	public void testIsValid()
 	{
 		boolean actual;
 		boolean expected;
@@ -103,7 +106,8 @@ public class ValidatorHandlerTest
 	 * @throws SAXException
 	 *             Any SAX exception, possibly wrapping another exception
 	 */
-	@Test public void testWarningSAXParseException() throws SAXException
+	@Test
+	public void testWarningSAXParseException() throws SAXException
 	{
 		SAXParseException actual;
 		SAXParseException expected;

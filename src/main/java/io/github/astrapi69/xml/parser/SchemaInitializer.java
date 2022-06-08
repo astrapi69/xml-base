@@ -24,12 +24,13 @@
  */
 package io.github.astrapi69.xml.parser;
 
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.SAXException;
+import java.io.File;
 
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
-import java.io.File;
+
+import org.xml.sax.ErrorHandler;
+import org.xml.sax.SAXException;
 
 public class SchemaInitializer
 {
@@ -52,8 +53,8 @@ public class SchemaInitializer
 		throws SAXException
 	{
 		// Create a new instance for an XSD-aware SchemaFactory
-		final SchemaFactory schemaFactory = SchemaFactory.newInstance(
-			HTTP_WWW_W3_ORG_2001_XML_SCHEMA);
+		final SchemaFactory schemaFactory = SchemaFactory
+			.newInstance(HTTP_WWW_W3_ORG_2001_XML_SCHEMA);
 
 		// Set the ErrorHandler implementation.
 		schemaFactory.setErrorHandler(errorHandler);
@@ -75,8 +76,8 @@ public class SchemaInitializer
 	public static Schema newSchema(final File xsd) throws SAXException
 	{
 		// Create a new instance for an XSD-aware SchemaFactory
-		final SchemaFactory schemaFactory = SchemaFactory.newInstance(
-			HTTP_WWW_W3_ORG_2001_XML_SCHEMA);
+		final SchemaFactory schemaFactory = SchemaFactory
+			.newInstance(HTTP_WWW_W3_ORG_2001_XML_SCHEMA);
 		// get the custom xsd schema that describes
 		// the required format for my XML files.
 		return schemaFactory.newSchema(xsd);

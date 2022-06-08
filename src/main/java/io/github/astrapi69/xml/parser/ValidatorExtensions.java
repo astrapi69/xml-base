@@ -24,15 +24,16 @@
  */
 package io.github.astrapi69.xml.parser;
 
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.SAXException;
+import java.io.File;
+import java.io.IOException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.validation.Schema;
 import javax.xml.validation.Validator;
-import java.io.File;
-import java.io.IOException;
+
+import org.xml.sax.ErrorHandler;
+import org.xml.sax.SAXException;
 
 /**
  * The class {@link ValidatorExtensions} can validate xml files.
@@ -93,8 +94,8 @@ public final class ValidatorExtensions
 	public static boolean validateSchema(final String schemaUrl, final String xmlDocumentUrl)
 		throws SAXException, ParserConfigurationException, IOException
 	{
-		final DocumentBuilder builder = DocumentBuilderFactoryInitializer.newDocumentBuilder(
-			schemaUrl);
+		final DocumentBuilder builder = DocumentBuilderFactoryInitializer
+			.newDocumentBuilder(schemaUrl);
 		final ValidatorHandler handler = new ValidatorHandler();
 		builder.setErrorHandler(handler);
 		builder.parse(xmlDocumentUrl);

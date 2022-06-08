@@ -25,16 +25,18 @@
 package io.github.astrapi69.xml.parser;
 
 
-import io.github.astrapi69.file.search.PathFinder;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.io.File;
+import java.io.IOException;
+
+import javax.xml.parsers.ParserConfigurationException;
+
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
 import org.xml.sax.SAXException;
 
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.File;
-import java.io.IOException;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import io.github.astrapi69.file.search.PathFinder;
 
 /**
  * The unit test class for the class {@link ValidatorExtensions}
@@ -54,7 +56,8 @@ public class ValidatorExtensionsTest
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
 	 */
-	@Test public void testValidateSchemaFileFileErrorHandler()
+	@Test
+	public void testValidateSchemaFileFileErrorHandler()
 		throws SAXException, ParserConfigurationException, IOException
 	{
 		boolean actual;
@@ -83,7 +86,8 @@ public class ValidatorExtensionsTest
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
 	 */
-	@Test public void testValidateSchemaStringString()
+	@Test
+	public void testValidateSchemaStringString()
 		throws SAXException, ParserConfigurationException, IOException
 	{
 		boolean actual;
@@ -113,7 +117,8 @@ public class ValidatorExtensionsTest
 	/**
 	 * Test method for {@link ValidatorExtensions}
 	 */
-	@Test public void testWithBeanTester()
+	@Test
+	public void testWithBeanTester()
 	{
 		final BeanTester beanTester = new BeanTester();
 		beanTester.testBean(ValidatorExtensions.class);

@@ -24,16 +24,17 @@
  */
 package io.github.astrapi69.xml.parser;
 
-import org.w3c.dom.Document;
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.SAXException;
+import java.io.File;
+import java.io.IOException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.dom.DOMSource;
-import java.io.File;
-import java.io.IOException;
+
+import org.w3c.dom.Document;
+import org.xml.sax.ErrorHandler;
+import org.xml.sax.SAXException;
 
 public class DocumentBuilderFactoryInitializer
 {
@@ -125,8 +126,8 @@ public class DocumentBuilderFactoryInitializer
 	public static DocumentBuilder newDocumentBuilder(final String schema)
 		throws ParserConfigurationException
 	{
-		final DocumentBuilderFactory factory = DocumentBuilderFactoryInitializer.newDocumentBuilderFactory(
-			schema);
+		final DocumentBuilderFactory factory = DocumentBuilderFactoryInitializer
+			.newDocumentBuilderFactory(schema);
 		return factory.newDocumentBuilder();
 	}
 
@@ -201,8 +202,8 @@ public class DocumentBuilderFactoryInitializer
 	public static Document parse(final File xml, final ErrorHandler errorHandler)
 		throws SAXException, ParserConfigurationException, IOException
 	{
-		final DocumentBuilder builder = DocumentBuilderFactoryInitializer.newDocumentBuilder(
-			xml.getName());
+		final DocumentBuilder builder = DocumentBuilderFactoryInitializer
+			.newDocumentBuilder(xml.getName());
 		builder.setErrorHandler(errorHandler);
 		return builder.parse(xml);
 	}
