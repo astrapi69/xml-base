@@ -94,9 +94,9 @@ public final class ValidatorExtensions
 	public static boolean validateSchema(final String schemaUrl, final String xmlDocumentUrl)
 		throws SAXException, ParserConfigurationException, IOException
 	{
+		final ValidatorHandler handler = new ValidatorHandler();
 		final DocumentBuilder builder = DocumentBuilderFactoryInitializer
 			.newDocumentBuilder(schemaUrl);
-		final ValidatorHandler handler = new ValidatorHandler();
 		builder.setErrorHandler(handler);
 		builder.parse(xmlDocumentUrl);
 		return !handler.isValid();

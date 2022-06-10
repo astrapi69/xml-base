@@ -29,7 +29,7 @@ import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.DefaultHandler;
 
 /**
- * The class {@link ValidatorHandler}.
+ * The class {@link ValidatorHandler}
  */
 public class ValidatorHandler extends DefaultHandler
 {
@@ -77,7 +77,7 @@ public class ValidatorHandler extends DefaultHandler
 	 */
 	public boolean isValid()
 	{
-		return validationError;
+		return isValidationError();
 	}
 
 	public boolean isValidationError()

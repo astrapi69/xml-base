@@ -26,13 +26,9 @@ package io.github.astrapi69.xml.parser;
 
 import java.io.File;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.dom.DOMSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 
-import org.w3c.dom.Document;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
 
@@ -46,15 +42,16 @@ public class SchemaInitializer
 	private static final String HTTP_WWW_W3_ORG_2001_XML_SCHEMA = "http://www.w3.org/2001/XMLSchema";
 
 	/**
-	 * Gets the schema.
+	 * Factory method for create a new {@link Schema} object from the given {@link File} object and
+	 * the given {@link ErrorHandler} object
 	 *
 	 * @param xsd
-	 *            the xsd
+	 *            the xsd {@link File} object
 	 * @param errorHandler
-	 *            the error handler
-	 * @return the schema
+	 *            the {@link ErrorHandler} object
+	 * @return the new {@link Schema} object from the given {@link File} object
 	 * @throws SAXException
-	 *             If a SAX error occurs during parsing.
+	 *             If a SAX error occurs during parsing
 	 */
 	public static Schema newSchema(final File xsd, final ErrorHandler errorHandler)
 		throws SAXException
@@ -72,10 +69,10 @@ public class SchemaInitializer
 	}
 
 	/**
-	 * Gets the schema.
+	 * Factory method for create a new {@link Schema} object from the given {@link File} object
 	 *
 	 * @param xsd
-	 *            the xsd
+	 *            the xsd {@link File} object
 	 * @return the schema
 	 * @throws SAXException
 	 *             If a SAX error occurs during parsing.

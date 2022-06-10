@@ -151,11 +151,12 @@ public class DocumentBuilderFactoryInitializer
 	}
 
 	/**
-	 * Gets the {@link Document} from the given xml file
+	 * Factory method for create a new {@link Document} object from the given xml {@link File}
+	 * object
 	 *
 	 * @param xml
 	 *            the xml file as string
-	 * @return the node list
+	 * @return the new {@link Document} object from the given xml {@link File} object
 	 * @throws ParserConfigurationException
 	 *             the parser configuration exception
 	 * @throws SAXException
@@ -170,11 +171,12 @@ public class DocumentBuilderFactoryInitializer
 	}
 
 	/**
-	 * Gets the {@link Document} from the given xml string
+	 * Factory method for create a new {@link Document} object from the given xml as {@link String}
+	 * object
 	 *
 	 * @param xml
-	 *            the xml file as string
-	 * @return the node list
+	 *            the xml as {@link String} object
+	 * @return the new {@link Document} object from the given xml as {@link String} object
 	 * @throws ParserConfigurationException
 	 *             the parser configuration exception
 	 * @throws SAXException
@@ -189,13 +191,13 @@ public class DocumentBuilderFactoryInitializer
 	}
 
 	/**
-	 * Parses the given xml file and the given error handler
+	 * Parses the given xml {@link File} object and the given {@link ErrorHandler} object
 	 *
 	 * @param xml
-	 *            the xml
+	 *            the {@link File} object
 	 * @param errorHandler
-	 *            the error handler
-	 * @return the document
+	 *            the {@link ErrorHandler} object
+	 * @return the {@link Document} object from the given xml {@link File} object
 	 * @throws SAXException
 	 *             If a SAX error occurs during parsing.
 	 * @throws ParserConfigurationException
@@ -214,13 +216,15 @@ public class DocumentBuilderFactoryInitializer
 	}
 
 	/**
-	 * Factory method for create a new {@link DOMSource} object with the given error handler
+	 * Factory method for create a new {@link DOMSource} object with the given {@link File} object
+	 * and the given {@link ErrorHandler} object
 	 *
 	 * @param xml
-	 *            the xml
+	 *            the xml {@link File} object
 	 * @param errorHandler
-	 *            the error handler
-	 * @return the dOM source
+	 *            the {@link ErrorHandler} object
+	 * @return the new {@link DOMSource} object with the given {@link File} object
+	 *
 	 * @throws SAXException
 	 *             If a SAX error occurs during parsing.
 	 * @throws ParserConfigurationException
