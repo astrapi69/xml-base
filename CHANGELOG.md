@@ -12,6 +12,8 @@ ADDED:
 - new class TemplateHandler for handle template xml or html objects
 - new class TransformerFactoryInitializer for initialize TransformerFactory Transformer objects
 - new class XPathExtensions for resolve NodeList from given xml files or xml strings
+- new class XmlResourceBundle for support all character sets and enables multi-language support
+- new class XmlResourceBundleControl for provide ResourceBundle object for xml resource bundles
 
 Version 1
 -------------
