@@ -38,7 +38,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import io.github.astrapi69.xml.parser.DocumentBuilderFactoryInitializer;
+import io.github.astrapi69.xml.parser.DocumentFactory;
 
 /**
  * The class {@link XPathExtensions} provides methods for resolve NodeList from given xml files or
@@ -71,7 +71,7 @@ public final class XPathExtensions
 	public static NodeList getNodeList(final File xml, final String xpathExpression)
 		throws XPathExpressionException, ParserConfigurationException, SAXException, IOException
 	{
-		final Document document = DocumentBuilderFactoryInitializer.newDocument(xml);
+		final Document document = DocumentFactory.newDocument(xml);
 		final XPath xpath = XPathFactory.newInstance().newXPath();
 		final XPathExpression xPathExpression = xpath.compile(xpathExpression);
 
@@ -99,7 +99,7 @@ public final class XPathExtensions
 	public static NodeList getNodeList(final String xml, final String xpathExpression)
 		throws XPathExpressionException, ParserConfigurationException, SAXException, IOException
 	{
-		final Document document = DocumentBuilderFactoryInitializer.newDocument(xml);
+		final Document document = DocumentFactory.newDocument(xml);
 		final XPath xpath = XPathFactory.newInstance().newXPath();
 		final XPathExpression xPathExpression = xpath.compile(xpathExpression);
 

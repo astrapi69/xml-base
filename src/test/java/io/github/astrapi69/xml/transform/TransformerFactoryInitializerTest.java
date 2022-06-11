@@ -34,6 +34,7 @@ import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.stream.StreamSource;
 
 import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
 
 import io.github.astrapi69.file.search.PathFinder;
 
@@ -85,4 +86,15 @@ public class TransformerFactoryInitializerTest
 		actual = TransformerFactoryInitializer.newTransformer(xsltFile.getAbsolutePath());
 		assertNotNull(actual);
 	}
+
+	/**
+	 * Test method for {@link TransformerFactoryInitializer}
+	 */
+	@Test
+	public void testWithBeanTester()
+	{
+		final BeanTester beanTester = new BeanTester();
+		beanTester.testBean(TransformerFactoryInitializer.class);
+	}
+
 }

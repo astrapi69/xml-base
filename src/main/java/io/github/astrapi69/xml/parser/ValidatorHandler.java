@@ -47,7 +47,7 @@ public class ValidatorHandler extends DefaultHandler
 	public void error(final SAXParseException exception) throws SAXException
 	{
 		validationError = true;
-		saxParseException = exception;
+		setSaxParseException(exception);
 	}
 
 	/**
@@ -57,7 +57,7 @@ public class ValidatorHandler extends DefaultHandler
 	public void fatalError(final SAXParseException exception) throws SAXException
 	{
 		validationError = true;
-		saxParseException = exception;
+		setSaxParseException(exception);
 	}
 
 	public SAXParseException getSaxParseException()
@@ -96,7 +96,7 @@ public class ValidatorHandler extends DefaultHandler
 	@Override
 	public void warning(final SAXParseException exception) throws SAXException
 	{
-		this.saxParseException = exception;
+		setSaxParseException(exception);
 	}
 
 }

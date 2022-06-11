@@ -38,10 +38,9 @@ import org.xml.sax.SAXException;
 
 /**
  * The class {@link DocumentBuilderFactoryInitializer} provides method for initialize
- * {@link DocumentBuilderFactory}, {@link DocumentBuilder}, {@link Document} and {@link DOMSource}
- * objects
+ * {@link DocumentBuilderFactory}, {@link DocumentBuilder} and {@link DOMSource} objects
  */
-public class DocumentBuilderFactoryInitializer
+public final class DocumentBuilderFactoryInitializer
 {
 
 	/** The Constant DOCUMENT_BUILDER_FACTORY_KEY. */
@@ -151,46 +150,6 @@ public class DocumentBuilderFactoryInitializer
 	}
 
 	/**
-	 * Factory method for create a new {@link Document} object from the given xml {@link File}
-	 * object
-	 *
-	 * @param xml
-	 *            the xml file as string
-	 * @return the new {@link Document} object from the given xml {@link File} object
-	 * @throws ParserConfigurationException
-	 *             the parser configuration exception
-	 * @throws SAXException
-	 *             is thrown if a sax parse error occurs
-	 * @throws IOException
-	 *             Signals that an I/O exception has occurred.
-	 */
-	public static Document newDocument(File xml)
-		throws ParserConfigurationException, SAXException, IOException
-	{
-		return DocumentBuilderFactoryInitializer.newDocumentBuilder().parse(xml);
-	}
-
-	/**
-	 * Factory method for create a new {@link Document} object from the given xml as {@link String}
-	 * object
-	 *
-	 * @param xml
-	 *            the xml as {@link String} object
-	 * @return the new {@link Document} object from the given xml as {@link String} object
-	 * @throws ParserConfigurationException
-	 *             the parser configuration exception
-	 * @throws SAXException
-	 *             is thrown if a sax parse error occurs
-	 * @throws IOException
-	 *             Signals that an I/O exception has occurred.
-	 */
-	public static Document newDocument(String xml)
-		throws ParserConfigurationException, SAXException, IOException
-	{
-		return DocumentBuilderFactoryInitializer.newDocumentBuilder().parse(xml);
-	}
-
-	/**
 	 * Parses the given xml {@link File} object and the given {@link ErrorHandler} object
 	 *
 	 * @param xml
@@ -211,8 +170,31 @@ public class DocumentBuilderFactoryInitializer
 	{
 		final DocumentBuilder builder = DocumentBuilderFactoryInitializer
 			.newDocumentBuilder(xml.getName());
-		builder.setErrorHandler(errorHandler);
+		if (errorHandler != null)
+		{
+			builder.setErrorHandler(errorHandler);
+		}
 		return builder.parse(xml);
+	}
+
+	/**
+	 * Parses the given xml {@link File} object
+	 *
+	 * @param xml
+	 *            the {@link File} object
+	 * @return the {@link Document} object from the given xml {@link File} object
+	 * @throws SAXException
+	 *             If a SAX error occurs during parsing.
+	 * @throws ParserConfigurationException
+	 *             if a DocumentBuilder cannot be created which satisfies the configuration
+	 *             requested.
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred.
+	 */
+	public static Document parse(final File xml)
+		throws SAXException, ParserConfigurationException, IOException
+	{
+		return parse(xml, null);
 	}
 
 	/**
@@ -238,4 +220,39 @@ public class DocumentBuilderFactoryInitializer
 	{
 		return new DOMSource(DocumentBuilderFactoryInitializer.parse(xml, errorHandler));
 	}
+
+	/**
+	 * Factory method for create a new {@link DOMSource} object with the given {@link File} object
+	 *
+	 * @param xml
+	 *            the xml {@link File} object
+	 * @return the new {@link DOMSource} object with the given {@link File} object
+	 *
+	 * @throws SAXException
+	 *             If a SAX error occurs during parsing.
+	 * @throws ParserConfigurationException
+	 *             if a DocumentBuilder cannot be created which satisfies the configuration
+	 *             requested.
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred.
+	 */
+	public static DOMSource newDOMSource(final File xml)
+		throws SAXException, ParserConfigurationException, IOException
+	{
+		return new DOMSource(DocumentBuilderFactoryInitializer.parse(xml));
+	}
+
+	/**
+	 * Factory method for create a new {@link DOMSource} object with the given {@link Document}
+	 * object
+	 *
+	 * @param document
+	 *            the {@link Document} object
+	 * @return the new {@link DOMSource} object with the given {@link Document} object
+	 */
+	public static DOMSource newDOMSource(final Document document)
+	{
+		return new DOMSource(document);
+	}
+
 }

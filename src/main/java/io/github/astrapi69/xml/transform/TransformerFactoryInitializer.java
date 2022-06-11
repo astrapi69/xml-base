@@ -36,11 +36,10 @@ import javax.xml.transform.stream.StreamSource;
  * The class {@link TransformerFactoryInitializer} provides method for initialize
  * {@link TransformerFactory} and {@link Transformer} objects
  */
-public class TransformerFactoryInitializer
+public final class TransformerFactoryInitializer
 {
 	private TransformerFactoryInitializer()
 	{
-
 	}
 
 	/**
@@ -51,6 +50,19 @@ public class TransformerFactoryInitializer
 	public static TransformerFactory newTransformerFactory()
 	{
 		return TransformerFactory.newInstance();
+	}
+
+	/**
+	 * Factory method for create a new {@link Transformer} object
+	 *
+	 * @return the new {@link Transformer} object
+	 * @throws TransformerConfigurationException
+	 *             is thrown if there are errors when parsing the <code>Source</code> or it is not
+	 *             possible to create a <code>Transformer</code> instance.
+	 */
+	public static Transformer newTransformer() throws TransformerConfigurationException
+	{
+		return newTransformerFactory().newTransformer();
 	}
 
 	/**

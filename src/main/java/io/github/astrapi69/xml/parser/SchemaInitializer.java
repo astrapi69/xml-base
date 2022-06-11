@@ -35,7 +35,7 @@ import org.xml.sax.SAXException;
 /**
  * The class {@link SchemaInitializer} provides method for initialize {@link Schema} objects
  */
-public class SchemaInitializer
+public final class SchemaInitializer
 {
 
 	/** The Constant HTTP_WWW_W3_ORG_2001_XML_SCHEMA is a value for the schema language */
