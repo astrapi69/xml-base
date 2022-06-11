@@ -27,10 +27,15 @@ package io.github.astrapi69.xml.transform;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
+import javax.xml.XMLConstants;
+import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamSource;
 
 import org.junit.jupiter.api.Test;
@@ -41,6 +46,7 @@ import io.github.astrapi69.file.search.PathFinder;
 public class TransformerFactoryInitializerTest
 {
 
+
 	/**
 	 * Test method for {@link TransformerFactoryInitializer#newTransformer(Source)}
 	 *
@@ -49,7 +55,83 @@ public class TransformerFactoryInitializerTest
 	 *             possible to create a <code>Transformer</code> instance.
 	 */
 	@Test
-	public void testGetTransformerSource() throws TransformerConfigurationException
+	public void testNewTransformer() throws TransformerConfigurationException
+	{
+		Transformer actual;
+
+		actual = TransformerFactoryInitializer.newTransformer();
+		assertNotNull(actual);
+	}
+
+	/**
+	 * Test method for {@link TransformerFactoryInitializer#newTransformer(Map)}
+	 */
+	@Test
+	public void testNewTransformerMap() throws TransformerConfigurationException
+	{
+		Map<String, Object> attributes;
+		int indent;
+		Transformer actual;
+
+		attributes = new HashMap<>();
+		indent = 4;
+		attributes.put("indent-number", indent);
+		attributes.put(XMLConstants.ACCESS_EXTERNAL_DTD, "");
+		attributes.put(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "");
+		actual = TransformerFactoryInitializer.newTransformer(attributes);
+		assertNotNull(actual);
+	}
+
+	/**
+	 * Test method for {@link TransformerFactoryInitializer#newTransformer(Map, Map)}
+	 */
+	@Test
+	public void testNewTransformerMapMap() throws TransformerConfigurationException
+	{
+		Map<String, Object> attributes;
+		Map<String, String> outputProperties;
+		int indent;
+		Transformer actual;
+
+		attributes = new HashMap<>();
+		outputProperties = new HashMap<>();
+		indent = 4;
+		attributes.put("indent-number", indent);
+		attributes.put(XMLConstants.ACCESS_EXTERNAL_DTD, "");
+		attributes.put(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "");
+		outputProperties.put(OutputKeys.INDENT, "yes");
+		actual = TransformerFactoryInitializer.newTransformer(attributes, outputProperties);
+		assertNotNull(actual);
+	}
+
+	/**
+	 * Test method for {@link TransformerFactoryInitializer#newTransformerFactory(Map)}
+	 */
+	@Test
+	public void testNewTransformerFactoryMap()
+	{
+		Map<String, Object> attributes;
+		int indent;
+		TransformerFactory actual;
+
+		attributes = new HashMap<>();
+		indent = 4;
+		attributes.put("indent-number", indent);
+		attributes.put(XMLConstants.ACCESS_EXTERNAL_DTD, "");
+		attributes.put(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "");
+		actual = TransformerFactoryInitializer.newTransformerFactory(attributes);
+		assertNotNull(actual);
+	}
+
+	/**
+	 * Test method for {@link TransformerFactoryInitializer#newTransformer(Source)}
+	 *
+	 * @throws TransformerConfigurationException
+	 *             is thrown if there are errors when parsing the <code>Source</code> or it is not
+	 *             possible to create a <code>Transformer</code> instance.
+	 */
+	@Test
+	public void testNewTransformerSource() throws TransformerConfigurationException
 	{
 		Transformer actual;
 		File resDestDir;
@@ -73,7 +155,7 @@ public class TransformerFactoryInitializerTest
 	 *             possible to create a <code>Transformer</code> instance.
 	 */
 	@Test
-	public void testGetTransformerString() throws TransformerConfigurationException
+	public void testNewTransformerString() throws TransformerConfigurationException
 	{
 		Transformer actual;
 		File resDestDir;

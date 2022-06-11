@@ -25,6 +25,7 @@
 package io.github.astrapi69.xml.transform;
 
 import java.io.File;
+import java.util.Map;
 
 import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
@@ -53,6 +54,24 @@ public final class TransformerFactoryInitializer
 	}
 
 	/**
+	 * Factory method for create a new {@link TransformerFactory} object with the given attributes
+	 * 
+	 * @param attributes
+	 *            the attributes for the {@link TransformerFactory} object
+	 *
+	 * @return the new {@link TransformerFactory} object
+	 */
+	public static TransformerFactory newTransformerFactory(final Map<String, Object> attributes)
+	{
+		TransformerFactory transformerFactory = newTransformerFactory();
+		for (Map.Entry<String, Object> entry : attributes.entrySet())
+		{
+			transformerFactory.setAttribute(entry.getKey(), entry.getValue());
+		}
+		return transformerFactory;
+	}
+
+	/**
 	 * Factory method for create a new {@link Transformer} object
 	 *
 	 * @return the new {@link Transformer} object
@@ -63,6 +82,45 @@ public final class TransformerFactoryInitializer
 	public static Transformer newTransformer() throws TransformerConfigurationException
 	{
 		return newTransformerFactory().newTransformer();
+	}
+
+	/**
+	 * Factory method for create a new {@link Transformer} object
+	 *
+	 * @param attributes
+	 *            the attributes for the {@link TransformerFactory} object
+	 * @return the new {@link Transformer} object
+	 * @throws TransformerConfigurationException
+	 *             is thrown if there are errors when parsing the <code>Source</code> or it is not
+	 *             possible to create a <code>Transformer</code> instance.
+	 */
+	public static Transformer newTransformer(final Map<String, Object> attributes)
+		throws TransformerConfigurationException
+	{
+		return newTransformerFactory(attributes).newTransformer();
+	}
+
+	/**
+	 * Factory method for create a new {@link Transformer} object
+	 *
+	 * @param attributes
+	 *            the attributes for the {@link TransformerFactory} object
+	 * @param outputProperties
+	 *            the output properties for the {@link Transformer} object
+	 * @return the new {@link Transformer} object
+	 * @throws TransformerConfigurationException
+	 *             is thrown if there are errors when parsing the <code>Source</code> or it is not
+	 *             possible to create a <code>Transformer</code> instance.
+	 */
+	public static Transformer newTransformer(final Map<String, Object> attributes,
+		final Map<String, String> outputProperties) throws TransformerConfigurationException
+	{
+		Transformer transformer = newTransformerFactory(attributes).newTransformer();
+		for (Map.Entry<String, String> entry : outputProperties.entrySet())
+		{
+			transformer.setOutputProperty(entry.getKey(), entry.getValue());
+		}
+		return transformer;
 	}
 
 	/**

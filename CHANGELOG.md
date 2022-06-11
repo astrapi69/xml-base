@@ -8,6 +8,8 @@ ADDED:
 
 - new class DocumentExtensions that provides extension methods for Document objects
 - new class DocumentFactory that provides factory methods for creating Document objects
+- new factory methods for TransformerFactory for provide needed attributes
+- new factory methods for Transformer for provide needed attributes and output properties
 
 Version 1.1
 -------------
