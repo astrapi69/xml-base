@@ -6,7 +6,7 @@ Version 1.2-SNAPSHOT
 
 ADDED:
 
-- new class DocumentExtensions that provides extension methods for Document objects 
+- new class DocumentExtensions that provides extension methods for Document objects
 - new class DocumentFactory that provides factory methods for creating Document objects
 
 Version 1.1
