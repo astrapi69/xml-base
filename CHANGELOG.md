@@ -12,6 +12,11 @@ ADDED:
 - new factory methods for Transformer for provide needed attributes and output properties
 - new extension method for print a Document object as String object
 
+CHANGED:
+
+- update of gradle plugin dependency com.diffplug.spotless:spotless-plugin-gradle to new patch version 6.7.2
+- update of test dependency throwable to new minor version 2.1
+
 Version 1.1
 -------------
 
