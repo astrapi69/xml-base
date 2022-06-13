@@ -54,4 +54,16 @@ public final class DocumentFactory
 	{
 		return DocumentBuilderFactoryInitializer.newDocumentBuilder().parse(xml);
 	}
+
+	/**
+	 * Factory method for create a new {@link Document} object
+	 *
+	 * @return the new {@link Document} object
+	 * @throws ParserConfigurationException
+	 *             the parser configuration exception
+	 */
+	public static Document newDocument() throws ParserConfigurationException
+	{
+		return DocumentBuilderFactoryInitializer.newDocumentBuilder().newDocument();
+	}
 }

@@ -89,4 +89,28 @@ public final class DocumentExtensions
 		transformer.transform(domSource, streamResult);
 	}
 
+	/**
+	 * This method creates a new {@link String} object from the given {@link Document} object
+	 *
+	 * @param document
+	 *            the {@link Document} object
+	 * @param prettyPrint
+	 *            if this flag is true the output is pretty printed
+	 * @return the new {@link String} object from the given {@link Document} object
+	 * @throws TransformerException
+	 *             is thrown if an error occurred with during the transformation process
+	 */
+	public static String toString(Document document, boolean prettyPrint)
+		throws TransformerException
+	{
+		if (prettyPrint)
+		{
+			return toString(document);
+		}
+		Transformer transformer = TransformerFactoryInitializer.newTransformer();
+		StringWriter writer = new StringWriter();
+		transformer.transform(new DOMSource(document), new StreamResult(writer));
+		return writer.toString();
+	}
+
 }

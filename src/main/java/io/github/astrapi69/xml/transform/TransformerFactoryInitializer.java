@@ -64,9 +64,12 @@ public final class TransformerFactoryInitializer
 	public static TransformerFactory newTransformerFactory(final Map<String, Object> attributes)
 	{
 		TransformerFactory transformerFactory = newTransformerFactory();
-		for (Map.Entry<String, Object> entry : attributes.entrySet())
+		if (attributes != null && !attributes.isEmpty())
 		{
-			transformerFactory.setAttribute(entry.getKey(), entry.getValue());
+			for (Map.Entry<String, Object> entry : attributes.entrySet())
+			{
+				transformerFactory.setAttribute(entry.getKey(), entry.getValue());
+			}
 		}
 		return transformerFactory;
 	}
