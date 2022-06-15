@@ -29,8 +29,10 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 import javax.xml.xpath.XPathExpressionException;
 
 import org.junit.jupiter.api.Test;
@@ -38,6 +40,8 @@ import org.meanbean.test.BeanTester;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import io.github.astrapi69.collections.list.ListFactory;
+import io.github.astrapi69.file.read.ReadFileExtensions;
 import io.github.astrapi69.file.search.PathFinder;
 
 /**
@@ -48,7 +52,7 @@ public class XPathExtensionsTest
 
 	/**
 	 * Test method for {@link XPathExtensions#getNodeList(File, String)}
-	 * 
+	 *
 	 * @throws XPathExpressionException
 	 *             the x path expression exception
 	 * @throws ParserConfigurationException
@@ -75,7 +79,7 @@ public class XPathExtensionsTest
 
 	/**
 	 * Test method for {@link XPathExtensions#getNodeList(String, String)}
-	 * 
+	 *
 	 * @throws XPathExpressionException
 	 *             the x path expression exception
 	 * @throws ParserConfigurationException
@@ -86,19 +90,33 @@ public class XPathExtensionsTest
 	 *             Signals that an I/O exception has occurred.
 	 */
 	@Test
-	public void testGetNodeListStringString()
-		throws XPathExpressionException, ParserConfigurationException, SAXException, IOException
+	public void testGetNodeListStringString() throws XPathExpressionException,
+		ParserConfigurationException, SAXException, IOException, TransformerException
 	{
 
 		NodeList actual;
 		File xml;
 		String xpathExpression;
+		String xmlString;
+		List<String> actualList;
+		List<String> expectedList;
 
 		xml = PathFinder.getRelativePath(PathFinder.getSrcTestResourcesDir(), "test-xml.xml");
 		xpathExpression = "/Customers/Customer[gender='Female']/name/text()";
-		actual = XPathExtensions.getNodeList(xml.getAbsolutePath(), xpathExpression);
+		xmlString = ReadFileExtensions.readFromFile(xml);
+		actual = XPathExtensions.getNodeList(xmlString, xpathExpression);
 		assertNotNull(actual);
 		assertEquals(actual.getLength(), 2);
+
+		xmlString = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + "<List>\n" + "\t<Order>\n"
+			+ "\t\t<Id>44</Id>\n" + "\t\t<Id>6</Id>\n" + "\t\t<Id>7</Id>\n" + "\t\t<Id>5</Id>\n"
+			+ "\t</Order>\n" + "</List>";
+		actual = XPathExtensions.getNodeList(xmlString, "/List/Order/Id");
+		assertNotNull(actual);
+		assertEquals(actual.getLength(), 4);
+		actualList = NodeExtensions.toValueList(actual);
+		expectedList = ListFactory.newArrayList("44", "6", "7", "5");
+		assertEquals(actualList, expectedList);
 	}
 
 	/**

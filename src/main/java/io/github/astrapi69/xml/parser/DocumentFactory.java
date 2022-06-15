@@ -26,10 +26,12 @@ package io.github.astrapi69.xml.parser;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.StringReader;
 
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.w3c.dom.Document;
+import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
@@ -76,7 +78,27 @@ public final class DocumentFactory
 	public static Document newDocument(String xml)
 		throws ParserConfigurationException, SAXException, IOException
 	{
-		return DocumentBuilderFactoryInitializer.newDocumentBuilder().parse(xml);
+		return newDocument(new InputSource(new StringReader(xml)));
+	}
+
+	/**
+	 * Factory method for create a new {@link Document} object from the given xml as
+	 * {@link InputSource} object
+	 *
+	 * @param inputSource
+	 *            the xml as {@link InputSource} object
+	 * @return the new {@link Document} object from the given xml as {@link String} object
+	 * @throws ParserConfigurationException
+	 *             the parser configuration exception
+	 * @throws SAXException
+	 *             is thrown if a sax parse error occurs
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred.
+	 */
+	public static Document newDocument(InputSource inputSource)
+		throws ParserConfigurationException, SAXException, IOException
+	{
+		return DocumentBuilderFactoryInitializer.newDocumentBuilder().parse(inputSource);
 	}
 
 	/**

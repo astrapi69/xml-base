@@ -4,6 +4,11 @@
 Version 1.3-SNAPSHOT
 -------------
 
+ADDED:
+
+- new factory methods for DocumentFactory with InputSource object
+- new extension methods for get xml string represantation from NodeList and Node objects
+
 Version 1.2
 -------------
 

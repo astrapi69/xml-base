@@ -28,6 +28,7 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
@@ -60,11 +61,12 @@ public final class XPathExtensions
 	 *            the xpath expression
 	 * @return the node list
 	 * @throws XPathExpressionException
-	 *             the x path expression exception
+	 *             is thrown if an error occurs in an XPath expression
 	 * @throws ParserConfigurationException
-	 *             the parser configuration exception
+	 *             if a DocumentBuilder cannot be created which satisfies the configuration
+	 *             requested.
 	 * @throws SAXException
-	 *             is thrown if a sax parse error occurs
+	 *             is thrown if a sax parse error or warning occurs
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
 	 */
@@ -88,11 +90,12 @@ public final class XPathExtensions
 	 *            the xpath expression as string.
 	 * @return the node list
 	 * @throws XPathExpressionException
-	 *             the x path expression exception
+	 *             is thrown if an error occurs in an XPath expression
 	 * @throws ParserConfigurationException
-	 *             the parser configuration exception
+	 *             if a DocumentBuilder cannot be created which satisfies the configuration
+	 *             requested.
 	 * @throws SAXException
-	 *             is thrown if a sax parse error occurs
+	 *             is thrown if a sax parse error or warning occurs
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
 	 */
@@ -106,4 +109,5 @@ public final class XPathExtensions
 		final Object result = xPathExpression.evaluate(document, XPathConstants.NODESET);
 		return (NodeList)result;
 	}
+
 }
