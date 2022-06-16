@@ -89,8 +89,8 @@ public class XPathExtensionsTest
 	 *             Signals that an I/O exception has occurred.
 	 */
 	@Test
-	public void testGetNodeListStringString() throws XPathExpressionException,
-		ParserConfigurationException, SAXException, IOException
+	public void testGetNodeListStringString()
+		throws XPathExpressionException, ParserConfigurationException, SAXException, IOException
 	{
 
 		NodeList actual;
