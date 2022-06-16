@@ -28,9 +28,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
 import javax.xml.transform.TransformerException;
 import javax.xml.xpath.XPathExpressionException;
 
@@ -74,6 +77,104 @@ public class NodeExtensionsTest
 		expected = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Customer id=\"1\">\n"
 			+ "\t\t<age>34</age>\n" + "\t\t<name>John</name>\n" + "\t\t<gender>Male</gender>\n"
 			+ "\t\t<role>Cpp Developer</role>\n" + "\t</Customer>";
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * Test method for {@link NodeExtensions#toXmlString(Node, Map)}
+	 *
+	 * @throws XPathExpressionException
+	 *             the x path expression exception
+	 * @throws ParserConfigurationException
+	 *             the parser configuration exception
+	 * @throws SAXException
+	 *             the sAX exception
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred.
+	 */
+	@Test
+	public void testNodeWithMapToXmlString() throws XPathExpressionException,
+		ParserConfigurationException, SAXException, IOException, TransformerException
+	{
+		Map<String, String> outputProperties;
+		String actual;
+		String expected;
+		NodeList nodeList;
+		File xml;
+		String xpathExpression;
+
+		outputProperties = new HashMap<>();
+		outputProperties.put(OutputKeys.INDENT, "yes");
+
+		xml = PathFinder.getRelativePath(PathFinder.getSrcTestResourcesDir(), "company.xml");
+		xpathExpression = "/Company";
+		nodeList = XPathExtensions.getNodeList(xml, xpathExpression);
+		Node item = nodeList.item(0);
+
+		actual = NodeExtensions.toXmlString(item, outputProperties);
+		expected = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Company>\n" + "    \t\n"
+			+ "    <Customers>\n" + "        \t\t\n" + "        <Customer id=\"1\">\n"
+			+ "            \t\t\t\n" + "            <age>34</age>\n" + "            \t\t\t\n"
+			+ "            <name>John</name>\n" + "            \t\t\t\n"
+			+ "            <gender>Male</gender>\n" + "            \t\t\t\n"
+			+ "            <role>Cpp Developer</role>\n" + "            \t\t\n"
+			+ "        </Customer>\n" + "        \t\t\n" + "        <Customer id=\"2\">\n"
+			+ "            \t\t\t\n" + "            <age>32</age>\n" + "            \t\t\t\n"
+			+ "            <name>Nelly</name>\n" + "            \t\t\t\n"
+			+ "            <gender>Female</gender>\n" + "            \t\t\t\n"
+			+ "            <role>CEO</role>\n" + "            \t\t\n" + "        </Customer>\n"
+			+ "        \t\t\n" + "        <Customer id=\"3\">\n" + "            \t\t\t\n"
+			+ "            <age>20</age>\n" + "            \t\t\t\n"
+			+ "            <name>Jim</name>\n" + "            \t\t\t\n"
+			+ "            <gender>Male</gender>\n" + "            \t\t\t\n"
+			+ "            <role>Manager</role>\n" + "            \t\t\n" + "        </Customer>\n"
+			+ "        \t\t\n" + "        <Customer id=\"4\">\n" + "            \t\t\t\n"
+			+ "            <age>28</age>\n" + "            \t\t\t\n"
+			+ "            <name>Tanja</name>\n" + "            \t\t\t\n"
+			+ "            <gender>Female</gender>\n" + "            \t\t\t\n"
+			+ "            <role>Manager</role>\n" + "            \t\t\n" + "        </Customer>\n"
+			+ "        \t\n" + "    </Customers>\n" + "    \n" + "</Company>\n";
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * Test method for {@link NodeExtensions#toXmlString(NodeList)}
+	 *
+	 * @throws XPathExpressionException
+	 *             the x path expression exception
+	 * @throws ParserConfigurationException
+	 *             the parser configuration exception
+	 * @throws SAXException
+	 *             the sAX exception
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred.
+	 */
+	@Test
+	public void testNodeListToXmlString() throws XPathExpressionException,
+		ParserConfigurationException, SAXException, IOException, TransformerException
+	{
+		String actual;
+		String expected;
+		NodeList nodeList;
+		File xml;
+		String xpathExpression;
+
+		xml = PathFinder.getRelativePath(PathFinder.getSrcTestResourcesDir(), "test-xml.xml");
+		xpathExpression = "/Customers/Customer";
+		nodeList = XPathExtensions.getNodeList(xml, xpathExpression);
+		actual = NodeExtensions.toXmlString(nodeList);
+		expected = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Customer id=\"1\">\n"
+			+ "\t\t<age>34</age>\n" + "\t\t<name>John</name>\n" + "\t\t<gender>Male</gender>\n"
+			+ "\t\t<role>Cpp Developer</role>\n"
+			+ "\t</Customer><?xml version=\"1.0\" encoding=\"UTF-8\"?><Customer id=\"2\">\n"
+			+ "\t\t<age>32</age>\n" + "\t\t<name>Nelly</name>\n" + "\t\t<gender>Female</gender>\n"
+			+ "\t\t<role>CEO</role>\n"
+			+ "\t</Customer><?xml version=\"1.0\" encoding=\"UTF-8\"?><Customer id=\"3\">\n"
+			+ "\t\t<age>20</age>\n" + "\t\t<name>Jim</name>\n" + "\t\t<gender>Male</gender>\n"
+			+ "\t\t<role>Manager</role>\n"
+			+ "\t</Customer><?xml version=\"1.0\" encoding=\"UTF-8\"?><Customer id=\"4\">\n"
+			+ "\t\t<age>28</age>\n" + "\t\t<name>Tanja</name>\n" + "\t\t<gender>Female</gender>\n"
+			+ "\t\t<role>Manager</role>\n" + "\t</Customer>";
 		assertEquals(expected, actual);
 	}
 

@@ -7,6 +7,7 @@ Version 1.3-SNAPSHOT
 ADDED:
 
 - new factory methods for DocumentFactory with InputSource object
+- new factory class DOMResultFactory for create DOMResult object
 - new extension methods for get xml string represantation from NodeList and Node objects
 - new extension method for get text content values from a given node and a given xpath expression
 

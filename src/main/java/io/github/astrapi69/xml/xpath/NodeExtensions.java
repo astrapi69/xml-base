@@ -25,7 +25,6 @@
 package io.github.astrapi69.xml.xpath;
 
 import java.io.IOException;
-import java.io.StringReader;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,17 +33,14 @@ import java.util.Map;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
-import javax.xml.transform.dom.DOMResult;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import javax.xml.transform.stream.StreamSource;
 import javax.xml.xpath.XPathExpressionException;
 
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import io.github.astrapi69.xml.parser.DocumentFactory;
 import io.github.astrapi69.xml.transform.TransformerFactoryInitializer;
 
 /**
@@ -194,29 +190,6 @@ public class NodeExtensions
 			outputProperties);
 		transformer.transform(new DOMSource(node), new StreamResult(stringWriter));
 		return stringWriter.toString();
-	}
-
-	/**
-	 * Creates a new {@link DOMResult} object from the given {@link String} object
-	 *
-	 * @param xml
-	 *            the xml as {@link String} object
-	 * @return a new {@link DOMResult} object from the given {@link String} object
-	 * @throws ParserConfigurationException
-	 *             if a DocumentBuilder cannot be created which satisfies the configuration
-	 *             requested.
-	 * @throws TransformerException
-	 *             is thrown if an unrecoverable error occurs during the course of the
-	 *             transformation
-	 */
-	public static DOMResult toDOMResult(String xml)
-		throws ParserConfigurationException, TransformerException
-	{
-		StreamSource streamSource = new StreamSource(new StringReader(xml));
-		DOMResult domResult = new DOMResult(DocumentFactory.newDocument());
-		Transformer transformer = TransformerFactoryInitializer.newTransformer(streamSource);
-		transformer.transform(streamSource, domResult);
-		return domResult;
 	}
 
 }
