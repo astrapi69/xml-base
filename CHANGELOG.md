@@ -8,6 +8,7 @@ ADDED:
 
 - new factory methods for DocumentFactory with InputSource object
 - new extension methods for get xml string represantation from NodeList and Node objects
+- new extension method for get text content values from a given node and a given xpath expression
 
 Version 1.2
 -------------

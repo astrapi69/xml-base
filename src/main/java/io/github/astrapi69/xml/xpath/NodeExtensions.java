@@ -24,6 +24,7 @@
  */
 package io.github.astrapi69.xml.xpath;
 
+import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.util.ArrayList;
@@ -37,21 +38,54 @@ import javax.xml.transform.dom.DOMResult;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
+import javax.xml.xpath.XPathExpressionException;
 
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 import io.github.astrapi69.xml.parser.DocumentFactory;
 import io.github.astrapi69.xml.transform.TransformerFactoryInitializer;
 
 /**
- * The class {@link NodeExtensions} provides methods for convert NodeList objects to string objects
+ * The class {@link NodeExtensions} provides methods for convert Node objects to string objects
  */
 public class NodeExtensions
 {
+
+	/**
+	 * Gets a list with the text content from the given {@link Node} object and the given xpath
+	 * expression.
+	 *
+	 * @param node
+	 *            the {@link Node} object
+	 * @param xpathExpression
+	 *            the xpath expression as string
+	 * @return the node list
+	 * @throws TransformerException
+	 *             is thrown if an unrecoverable error occurs during the course of the
+	 *             transformation
+	 * @throws XPathExpressionException
+	 *             is thrown if an error occurs in an XPath expression
+	 * @throws ParserConfigurationException
+	 *             if a DocumentBuilder cannot be created which satisfies the configuration
+	 *             requested.
+	 * @throws SAXException
+	 *             is thrown if a sax parse error or warning occurs
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred.
+	 */
+	public static List<String> getTextContentValues(Node node, String xpathExpression)
+		throws TransformerException, XPathExpressionException, ParserConfigurationException,
+		SAXException, IOException
+	{
+		return getTextContentValues(
+			XPathExtensions.getNodeList(toXmlString(node), xpathExpression));
+	}
+
 	/**
 	 * Resolves the node from the given index and returns it as {@link String} object
-	 * 
+	 *
 	 * @param nodeList
 	 *            the node list
 	 * @param index
@@ -61,9 +95,9 @@ public class NodeExtensions
 	 *             is thrown if an unrecoverable error occurs during the course of the
 	 *             transformation
 	 */
-	public static String toString(NodeList nodeList, int index) throws TransformerException
+	public static String toXmlString(NodeList nodeList, int index) throws TransformerException
 	{
-		return toString(nodeList.item(index));
+		return toXmlString(nodeList.item(index));
 	}
 
 	/**
@@ -76,14 +110,14 @@ public class NodeExtensions
 	 *             is thrown if an unrecoverable error occurs during the course of the
 	 *             transformation
 	 */
-	public static String toString(NodeList nodeList) throws TransformerException
+	public static String toXmlString(NodeList nodeList) throws TransformerException
 	{
 		int length = nodeList.getLength();
 		StringBuilder stringBuilder = new StringBuilder();
 		for (int i = 0; i < length; i++)
 		{
 			Node item = nodeList.item(i);
-			stringBuilder.append(toString(item));
+			stringBuilder.append(toXmlString(item));
 		}
 		return stringBuilder.toString();
 	}
@@ -91,13 +125,13 @@ public class NodeExtensions
 	/**
 	 * Returns the content of the values from the given {@link NodeList} object as {@link List} of
 	 * {@link String} objects
-	 * 
+	 *
 	 * @param nodeList
 	 *            the node list
 	 * @return the content of the values from the given {@link NodeList} object as {@link List} of
 	 *         {@link String} objects
 	 */
-	public static List<String> toValueList(NodeList nodeList)
+	public static List<String> getTextContentValues(NodeList nodeList)
 	{
 		int length = nodeList.getLength();
 		List<String> result = new ArrayList<>(length);
@@ -112,7 +146,7 @@ public class NodeExtensions
 
 	/**
 	 * Returns a xml representation as {@link String} object of the given {@link Node} object
-	 * 
+	 *
 	 * @param node
 	 *            the {@link Node} object
 	 * @return a xml representation as {@link String} object of the given {@link Node} object
@@ -120,7 +154,7 @@ public class NodeExtensions
 	 *             is thrown if an unrecoverable error occurs during the course of the
 	 *             transformation
 	 */
-	public static String toString(Node node) throws TransformerException
+	public static String toXmlString(Node node) throws TransformerException
 	{
 		StringWriter stringWriter = new StringWriter();
 		Transformer transformer = TransformerFactoryInitializer.newTransformer();
@@ -130,7 +164,7 @@ public class NodeExtensions
 
 	/**
 	 * Returns the text content as {@link String} object of the given {@link Node} object
-	 * 
+	 *
 	 * @param node
 	 *            the {@link Node} object
 	 * @return the text content as {@link String} object of the given {@link Node} object
@@ -142,7 +176,7 @@ public class NodeExtensions
 
 	/**
 	 * Returns a xml representation as {@link String} object of the given {@link Node} object
-	 * 
+	 *
 	 * @param node
 	 *            the {@link Node} object
 	 * @param outputProperties
@@ -152,7 +186,7 @@ public class NodeExtensions
 	 *             is thrown if an unrecoverable error occurs during the course of the
 	 *             transformation
 	 */
-	public static String toString(Node node, Map<String, String> outputProperties)
+	public static String toXmlString(Node node, Map<String, String> outputProperties)
 		throws TransformerException
 	{
 		StringWriter stringWriter = new StringWriter();
@@ -164,7 +198,7 @@ public class NodeExtensions
 
 	/**
 	 * Creates a new {@link DOMResult} object from the given {@link String} object
-	 * 
+	 *
 	 * @param xml
 	 *            the xml as {@link String} object
 	 * @return a new {@link DOMResult} object from the given {@link String} object

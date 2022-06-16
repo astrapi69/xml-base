@@ -114,7 +114,7 @@ public class XPathExtensionsTest
 		actual = XPathExtensions.getNodeList(xmlString, "/List/Order/Id");
 		assertNotNull(actual);
 		assertEquals(actual.getLength(), 4);
-		actualList = NodeExtensions.toValueList(actual);
+		actualList = NodeExtensions.getTextContentValues(actual);
 		expectedList = ListFactory.newArrayList("44", "6", "7", "5");
 		assertEquals(actualList, expectedList);
 	}
