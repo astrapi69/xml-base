@@ -35,8 +35,18 @@ import org.xml.sax.SAXException;
 
 import io.github.astrapi69.file.search.PathFinder;
 
+/**
+ * The unit test class for the class {@link SchemaInitializer}
+ */
 public class SchemaInitializerTest
 {
+
+	/**
+	 * Test method for {@link SchemaInitializer#newSchema(File)}
+	 * 
+	 * @throws SAXException
+	 *             If a SAX error occurs during parsing
+	 */
 	@Test
 	public void testNewSchema() throws SAXException
 	{

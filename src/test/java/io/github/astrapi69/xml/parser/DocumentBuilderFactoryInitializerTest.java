@@ -38,8 +38,22 @@ import org.xml.sax.SAXException;
 
 import io.github.astrapi69.file.search.PathFinder;
 
+/**
+ * The unit test class for the class {@link DocumentBuilderFactoryInitializer}
+ */
 public class DocumentBuilderFactoryInitializerTest
 {
+
+	/**
+	 * Test method for {@link DocumentBuilderFactoryInitializer#newDOMSource(Document)}
+	 *
+	 * @throws ParserConfigurationException
+	 *             the parser configuration exception
+	 * @throws SAXException
+	 *             If a SAX error occurs during parsing
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred.
+	 */
 	@Test
 	public void testNewDOMSourceWithDocument()
 		throws ParserConfigurationException, IOException, SAXException
@@ -52,6 +66,16 @@ public class DocumentBuilderFactoryInitializerTest
 		assertNotNull(actual);
 	}
 
+	/**
+	 * Test method for {@link DocumentBuilderFactoryInitializer#newDOMSource(File)}
+	 *
+	 * @throws ParserConfigurationException
+	 *             the parser configuration exception
+	 * @throws SAXException
+	 *             If a SAX error occurs during parsing
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred.
+	 */
 	@Test
 	public void testNewDOMSourceWithFile()
 		throws ParserConfigurationException, IOException, SAXException

@@ -43,9 +43,11 @@ import org.meanbean.test.BeanTester;
 
 import io.github.astrapi69.file.search.PathFinder;
 
+/**
+ * The unit test class for the class {@link TransformerFactoryInitializer}
+ */
 public class TransformerFactoryInitializerTest
 {
-
 
 	/**
 	 * Test method for {@link TransformerFactoryInitializer#newTransformer(Source)}
@@ -65,6 +67,10 @@ public class TransformerFactoryInitializerTest
 
 	/**
 	 * Test method for {@link TransformerFactoryInitializer#newTransformer(Map)}
+	 *
+	 * @throws TransformerConfigurationException
+	 *             is thrown if there are errors when parsing the <code>Source</code> or it is not
+	 *             possible to create a <code>Transformer</code> instance.
 	 */
 	@Test
 	public void testNewTransformerMap() throws TransformerConfigurationException
@@ -84,6 +90,10 @@ public class TransformerFactoryInitializerTest
 
 	/**
 	 * Test method for {@link TransformerFactoryInitializer#newTransformer(Map, Map)}
+	 *
+	 * @throws TransformerConfigurationException
+	 *             is thrown if there are errors when parsing the <code>Source</code> or it is not
+	 *             possible to create a <code>Transformer</code> instance.
 	 */
 	@Test
 	public void testNewTransformerMapMap() throws TransformerConfigurationException

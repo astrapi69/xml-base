@@ -75,7 +75,7 @@ public final class SchemaInitializer
 	 *            the xsd {@link File} object
 	 * @return the schema
 	 * @throws SAXException
-	 *             If a SAX error occurs during parsing.
+	 *             If a SAX error occurs during parsing
 	 */
 	public static Schema newSchema(final File xsd) throws SAXException
 	{

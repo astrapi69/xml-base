@@ -32,7 +32,6 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerException;
 import javax.xml.xpath.XPathExpressionException;
 
 import org.junit.jupiter.api.Test;
@@ -58,7 +57,7 @@ public class XPathExtensionsTest
 	 * @throws ParserConfigurationException
 	 *             the parser configuration exception
 	 * @throws SAXException
-	 *             the sAX exception
+	 *             If a SAX error occurs during parsing
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
 	 */
@@ -85,13 +84,13 @@ public class XPathExtensionsTest
 	 * @throws ParserConfigurationException
 	 *             the parser configuration exception
 	 * @throws SAXException
-	 *             the sAX exception
+	 *             If a SAX error occurs during parsing
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
 	 */
 	@Test
 	public void testGetNodeListStringString() throws XPathExpressionException,
-		ParserConfigurationException, SAXException, IOException, TransformerException
+		ParserConfigurationException, SAXException, IOException
 	{
 
 		NodeList actual;

@@ -1,41 +1,56 @@
+/**
+ * The MIT License
+ *
+ * Copyright (C) 2021 Asterios Raptis
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 package io.github.astrapi69.xml.transform.dom;
-
-import io.github.astrapi69.xml.xpath.NodeExtensions;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
-
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.dom.DOMResult;
-import javax.xml.xpath.XPathExpressionException;
-
-import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.dom.DOMResult;
+
+import org.junit.jupiter.api.Test;
+
+/**
+ * The unit test class for the class {@link DOMResultFactory}
+ */
 public class DOMResultFactoryTest
 {
 
 	/**
 	 * Test method for {@link DOMResultFactory#newDOMResult(String)}
 	 *
-	 * @throws ParserConfigurationException
-	 *             if a DocumentBuilder cannot be created which satisfies the configuration
-	 *             requested.
 	 * @throws TransformerException
 	 *             is thrown if an unrecoverable error occurs during the course of the
 	 *             transformation
 	 */
 	@Test
-	@Disabled
-	public void testNewDOMResult() throws ParserConfigurationException, TransformerException
+	public void testNewDOMResult() throws TransformerException
 	{
 		String xmlString;
-		// TODO
-		xmlString = "";
-
+		xmlString = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Customer id=\"1\">\n"
+			+ "\t\t<age>34</age>\n" + "\t\t<name>John</name>\n" + "\t\t<gender>Male</gender>\n"
+			+ "\t\t<role>Cpp Developer</role>\n" + "\t</Customer>";
 		DOMResult domResult = DOMResultFactory.newDOMResult(xmlString);
 		assertNotNull(domResult);
 

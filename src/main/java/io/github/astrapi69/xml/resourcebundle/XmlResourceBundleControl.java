@@ -29,8 +29,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -54,7 +52,7 @@ public class XmlResourceBundleControl extends ResourceBundle.Control
 		{
 			throw new NullPointerException("baseName is null");
 		}
-		return Collections.unmodifiableList(Arrays.asList(XML));
+		return List.of(XML);
 	}
 
 	/**
@@ -83,19 +81,11 @@ public class XmlResourceBundleControl extends ResourceBundle.Control
 			return null;
 		}
 		final URLConnection connection = url.openConnection();
-		if (connection == null)
-		{
-			return null;
-		}
 		if (reload)
 		{
 			connection.setUseCaches(false);
 		}
 		final InputStream stream = connection.getInputStream();
-		if (stream == null)
-		{
-			return null;
-		}
 		final BufferedInputStream bis = new BufferedInputStream(stream);
 		ResourceBundle bundle = new XmlResourceBundle(bis);
 

@@ -45,6 +45,9 @@ import org.xml.sax.SAXException;
 import io.github.astrapi69.collections.list.ListFactory;
 import io.github.astrapi69.file.search.PathFinder;
 
+/**
+ * The unit test class for the class {@link NodeExtensions}
+ */
 public class NodeExtensionsTest
 {
 
@@ -56,7 +59,7 @@ public class NodeExtensionsTest
 	 * @throws ParserConfigurationException
 	 *             the parser configuration exception
 	 * @throws SAXException
-	 *             the sAX exception
+	 *             If a SAX error occurs during parsing
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
 	 */
@@ -88,7 +91,7 @@ public class NodeExtensionsTest
 	 * @throws ParserConfigurationException
 	 *             the parser configuration exception
 	 * @throws SAXException
-	 *             the sAX exception
+	 *             If a SAX error occurs during parsing
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
 	 */
@@ -145,7 +148,7 @@ public class NodeExtensionsTest
 	 * @throws ParserConfigurationException
 	 *             the parser configuration exception
 	 * @throws SAXException
-	 *             the sAX exception
+	 *             If a SAX error occurs during parsing
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
 	 */
@@ -186,7 +189,7 @@ public class NodeExtensionsTest
 	 * @throws ParserConfigurationException
 	 *             the parser configuration exception
 	 * @throws SAXException
-	 *             the sAX exception
+	 *             If a SAX error occurs during parsing
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
 	 */
