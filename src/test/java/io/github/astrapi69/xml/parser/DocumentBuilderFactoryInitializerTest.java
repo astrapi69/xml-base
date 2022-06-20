@@ -29,6 +29,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import java.io.File;
 import java.io.IOException;
 
+import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.dom.DOMSource;
 
@@ -84,6 +85,31 @@ public class DocumentBuilderFactoryInitializerTest
 		File xmlFile;
 		xmlFile = PathFinder.getRelativePath(PathFinder.getSrcTestResourcesDir(), "test-xml.xml");
 		actual = DocumentBuilderFactoryInitializer.newDOMSource(xmlFile);
+		assertNotNull(actual);
+	}
+
+	/**
+	 * Test method for
+	 * {@link DocumentBuilderFactoryInitializer#newDocumentBuilderFactory(String, String, String, boolean, boolean)}
+	 */
+	@Test
+	public void testNewDocumentBuilderFactory()
+	{
+		DocumentBuilderFactory actual;
+		String schema;
+		String schemaLanguage;
+		String documentBuilderFactoryName;
+		boolean namespaceAwareness;
+		boolean factoryValidating;
+
+		schema = null;
+		schemaLanguage = null;
+		documentBuilderFactoryName = null;
+		namespaceAwareness = false;
+		factoryValidating = false;
+
+		actual = DocumentBuilderFactoryInitializer.newDocumentBuilderFactory(schema, schemaLanguage,
+			documentBuilderFactoryName, namespaceAwareness, factoryValidating);
 		assertNotNull(actual);
 	}
 }
