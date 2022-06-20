@@ -182,7 +182,7 @@ public class NodeExtensionsTest
 	}
 
 	/**
-	 * Test method for {@link NodeExtensions#getTextContentValues(Node, String)} 
+	 * Test method for {@link NodeExtensions#getTextContentValues(Node, String)}
 	 *
 	 * @throws XPathExpressionException
 	 *             the x path expression exception
