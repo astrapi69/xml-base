@@ -24,4 +24,5 @@
  */
 module xml.base {
 	requires java.xml;
+	requires throwable;
 }

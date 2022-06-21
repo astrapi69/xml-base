@@ -24,10 +24,11 @@
  */
 package io.github.astrapi69.xml.sax.handler;
 
-import java.io.IOException;
 import java.io.Writer;
 
 import org.xml.sax.SAXException;
+
+import io.github.astrapi69.throwable.RuntimeExceptionDecorator;
 
 /**
  * The class {@link OutputStreamWriterHandler}
@@ -52,15 +53,10 @@ public class OutputStreamWriterHandler extends WriterHandler
 	@Override
 	protected void write(final String s) throws SAXException
 	{
-		try
-		{
+		RuntimeExceptionDecorator.decorate(() -> {
 			getWriter().write(s);
 			getWriter().flush();
-		}
-		catch (final IOException e)
-		{
-			throw new SAXException("I/O error", e);
-		}
+		});
 	}
 
 }
