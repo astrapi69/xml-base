@@ -38,6 +38,7 @@ import javax.xml.transform.TransformerException;
 import javax.xml.xpath.XPathExpressionException;
 
 import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
@@ -211,5 +212,16 @@ public class NodeExtensionsTest
 		expected = ListFactory.newArrayList("34", "32", "20", "28");
 		assertEquals(expected, actual);
 	}
+
+	/**
+	 * Test method for {@link NodeExtensions}
+	 */
+	@Test
+	public void testWithBeanTester()
+	{
+		final BeanTester beanTester = new BeanTester();
+		beanTester.testBean(NodeExtensions.class);
+	}
+
 
 }

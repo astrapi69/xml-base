@@ -24,12 +24,13 @@
  */
 package io.github.astrapi69.xml.sax.handler;
 
-import java.io.IOException;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.util.Map;
 
 import org.xml.sax.SAXException;
+
+import io.github.astrapi69.throwable.RuntimeExceptionDecorator;
 
 /**
  * The class {@link TemplateHandler}
@@ -61,11 +62,10 @@ public class TemplateHandler extends WriterHandler
 	@Override
 	protected void write(final String s) throws SAXException
 	{
-		try
-		{
+		RuntimeExceptionDecorator.decorate(() -> {
 			if (s.startsWith("$"))
 			{
-				final String newValue = data.get(s.substring(1, s.length()));
+				final String newValue = data.get(s.substring(1));
 
 				getWriter().append(newValue);
 
@@ -74,11 +74,7 @@ public class TemplateHandler extends WriterHandler
 			{
 				getWriter().append(s);
 			}
-		}
-		catch (final IOException e)
-		{
-			throw new SAXException("I/O error", e);
-		}
+		});
 	}
 
 }

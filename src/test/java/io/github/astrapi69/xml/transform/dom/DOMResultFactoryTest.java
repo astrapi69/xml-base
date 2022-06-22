@@ -30,6 +30,7 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.dom.DOMResult;
 
 import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
 
 /**
  * The unit test class for the class {@link DOMResultFactory}
@@ -55,4 +56,15 @@ public class DOMResultFactoryTest
 		assertNotNull(domResult);
 
 	}
+
+	/**
+	 * Test method for {@link DOMResultFactory}
+	 */
+	@Test
+	public void testWithBeanTester()
+	{
+		final BeanTester beanTester = new BeanTester();
+		beanTester.testBean(DOMResultFactory.class);
+	}
+
 }

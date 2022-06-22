@@ -131,6 +131,12 @@ public class TransformerFactoryInitializerTest
 		attributes.put(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "");
 		actual = TransformerFactoryInitializer.newTransformerFactory(attributes);
 		assertNotNull(actual);
+		attributes.clear();
+		actual = TransformerFactoryInitializer.newTransformerFactory(attributes);
+		assertNotNull(actual);
+		attributes = null;
+		actual = TransformerFactoryInitializer.newTransformerFactory(attributes);
+		assertNotNull(actual);
 	}
 
 	/**

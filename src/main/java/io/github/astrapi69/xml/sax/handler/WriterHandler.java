@@ -24,13 +24,14 @@
  */
 package io.github.astrapi69.xml.sax.handler;
 
-import java.io.IOException;
 import java.io.Writer;
 import java.util.Objects;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
+
+import io.github.astrapi69.throwable.RuntimeExceptionDecorator;
 
 /**
  * The abstract class {@link WriterHandler}.
@@ -80,15 +81,10 @@ public abstract class WriterHandler extends DefaultHandler
 	public void endDocument() throws SAXException
 	{
 		insertNewLine();
-		try
-		{
+		RuntimeExceptionDecorator.decorate(() -> {
 			insertNewLine();
 			writer.flush();
-		}
-		catch (final IOException e)
-		{
-			throw new SAXException("I/O error", e);
-		}
+		});
 	}
 
 	/**
@@ -123,14 +119,9 @@ public abstract class WriterHandler extends DefaultHandler
 	 */
 	private void insertNewLine() throws SAXException
 	{
-		try
-		{
+		RuntimeExceptionDecorator.decorate(() -> {
 			writer.write(System.getProperty("line.separator"));
-		}
-		catch (final IOException e)
-		{
-			throw new SAXException("I/O error", e);
-		}
+		});
 	}
 
 	/**
