@@ -40,6 +40,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
 
 import io.github.astrapi69.collections.iterators.EnumerationIterator;
 import io.github.astrapi69.collections.list.ListFactory;
@@ -203,6 +204,16 @@ public class XmlResourceBundleControlTest
 			xmlResourceBundleControl.newBundle(null, locale, format, loader, reload);
 		});
 		Assertions.assertEquals(NullPointerException.class, exception.getClass());
+	}
+
+	/**
+	 * Test method for {@link XmlResourceBundleControl}
+	 */
+	@Test
+	public void testWithBeanTester()
+	{
+		final BeanTester beanTester = new BeanTester();
+		beanTester.testBean(XmlResourceBundleControl.class);
 	}
 
 }

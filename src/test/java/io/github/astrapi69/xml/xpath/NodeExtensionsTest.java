@@ -223,5 +223,4 @@ public class NodeExtensionsTest
 		beanTester.testBean(NodeExtensions.class);
 	}
 
-
 }

@@ -34,6 +34,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.dom.DOMSource;
 
 import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
@@ -112,4 +113,15 @@ public class DocumentBuilderFactoryInitializerTest
 			documentBuilderFactoryName, namespaceAwareness, factoryValidating);
 		assertNotNull(actual);
 	}
+
+	/**
+	 * Test method for {@link DocumentBuilderFactoryInitializer}
+	 */
+	@Test
+	public void testWithBeanTester()
+	{
+		final BeanTester beanTester = new BeanTester();
+		beanTester.testBean(DocumentBuilderFactoryInitializer.class);
+	}
+
 }

@@ -31,6 +31,7 @@ import java.io.File;
 import javax.xml.validation.Schema;
 
 import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
 import org.xml.sax.SAXException;
 
 import io.github.astrapi69.file.search.PathFinder;
@@ -55,5 +56,15 @@ public class SchemaInitializerTest
 		xsd = new File(PathFinder.getSrcTestResourcesDir(), "dataset.xsd");
 		actual = SchemaInitializer.newSchema(xsd);
 		assertNotNull(actual);
+	}
+
+	/**
+	 * Test method for {@link SchemaInitializer}
+	 */
+	@Test
+	public void testWithBeanTester()
+	{
+		final BeanTester beanTester = new BeanTester();
+		beanTester.testBean(SchemaInitializer.class);
 	}
 }

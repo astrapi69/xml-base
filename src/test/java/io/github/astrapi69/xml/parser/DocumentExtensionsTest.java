@@ -33,6 +33,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 
 import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
@@ -166,4 +167,15 @@ public class DocumentExtensionsTest
 			+ "</Customers>";
 		assertEquals(expected, actual);
 	}
+
+	/**
+	 * Test method for {@link DocumentExtensions}
+	 */
+	@Test
+	public void testWithBeanTester()
+	{
+		final BeanTester beanTester = new BeanTester();
+		beanTester.testBean(DocumentExtensions.class);
+	}
+
 }

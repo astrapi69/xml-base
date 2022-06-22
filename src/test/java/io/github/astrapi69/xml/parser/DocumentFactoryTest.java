@@ -29,6 +29,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
 import org.w3c.dom.Document;
 
 /**
@@ -50,5 +51,15 @@ public class DocumentFactoryTest
 
 		actual = DocumentFactory.newDocument();
 		assertNotNull(actual);
+	}
+
+	/**
+	 * Test method for {@link DocumentFactory}
+	 */
+	@Test
+	public void testWithBeanTester()
+	{
+		final BeanTester beanTester = new BeanTester();
+		beanTester.testBean(DocumentFactory.class);
 	}
 }
