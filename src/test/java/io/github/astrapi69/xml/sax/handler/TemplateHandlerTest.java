@@ -24,6 +24,7 @@
  */
 package io.github.astrapi69.xml.sax.handler;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;
@@ -37,6 +38,7 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 import org.junit.jupiter.api.Test;
+import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 
 import io.github.astrapi69.file.compare.CompareFileExtensions;
@@ -92,6 +94,25 @@ public class TemplateHandlerTest
 		assertTrue(bean.getContentEquality());
 		DeleteFileExtensions.delete(output);
 
+	}
+
+	/**
+	 * Test method for {@link TemplateHandler#startElement(String, String, String, Attributes)}
+	 */
+	@Test
+	public void testStartElement() throws IOException, SAXException
+	{
+		// The resources destination dir
+		final File testResDir = PathFinder.getSrcTestResourcesDir();
+		final String templateName = "LoginAsProvider";
+		final File input = new File(testResDir, templateName + ".cvs");
+		final List<Map<String, String>> testData = CsvFileExtensions.getCvsAsListMap(input);
+		final Map<String, String> oneline = testData.get(0);
+		final StringWriter writer = new StringWriter();
+		final TemplateHandler handler = new TemplateHandler(oneline, writer);
+
+		handler.startElement("", "", "html", null);
+		assertNotNull(handler);
 	}
 
 }
