@@ -63,7 +63,6 @@ public abstract class WriterHandler extends DefaultHandler
 	public void characters(final char[] buf, final int offset, final int len) throws SAXException
 	{
 		final String string = new String(buf, offset, len);
-
 		if (stringBuilder == null)
 		{
 			stringBuilder = new StringBuilder(string);
@@ -95,15 +94,7 @@ public abstract class WriterHandler extends DefaultHandler
 		final String qualifiedName) throws SAXException
 	{
 		writeToBuffer();
-
-		String elementName = simpleName;
-
-		if ("".equals(elementName))
-		{
-			elementName = qualifiedName;
-		}
-
-		write("</" + elementName + ">");
+		write("</" + getName(simpleName, qualifiedName) + ">");
 	}
 
 	public Writer getWriter()
@@ -141,29 +132,16 @@ public abstract class WriterHandler extends DefaultHandler
 		final String qualifiedName, final Attributes attributes) throws SAXException
 	{
 		writeToBuffer();
-
-		String elementName = simpleName;
-
-		if (elementName.isEmpty())
+		write("<" + getName(simpleName, qualifiedName));
+		if (attributes != null)
 		{
-			elementName = qualifiedName;
-		}
-
-		write("<" + elementName);
-
-		for (int i = 0; i < attributes.getLength(); i++)
-		{
-			String attributeName = attributes.getLocalName(i);
-
-			if ("".equals(attributeName))
+			for (int i = 0; i < attributes.getLength(); i++)
 			{
-				attributeName = attributes.getQName(i);
+				String attributeName = getName(attributes.getLocalName(i), attributes.getQName(i));
+				write(" ");
+				write(attributeName + "=\"" + attributes.getValue(i) + "\"");
 			}
-
-			write(" ");
-			write(attributeName + "=\"" + attributes.getValue(i) + "\"");
 		}
-
 		write(">");
 	}
 
@@ -192,5 +170,14 @@ public abstract class WriterHandler extends DefaultHandler
 		final String string = stringBuilder.toString().trim();
 		write(string);
 		stringBuilder = null;
+	}
+
+	public String getName(String defaultName, String alternativeName)
+	{
+		if ("".equals(defaultName))
+		{
+			return alternativeName;
+		}
+		return defaultName;
 	}
 }
