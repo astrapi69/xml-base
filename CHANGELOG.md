@@ -1,18 +1,20 @@
 ## Change log
 ----------------------
 
-Version 1.4-SNAPSHOT
+Version 1.4
 -------------
 
 ADDED:
 
 - new requires statement to module-info.java file for module throwable
+- exports for all project packages in the module-info.java file
 
 CHANGED:
 
 - update of gradle to new version 7.5-rc-2
 - update of dependency throwable to new minor version 2.2
 - update gradle-plugin dependency of io.freefair.gradle:lombok-plugin to new patch version 6.5.0.2
+- increase of code coverage to 100%
 
 Version 1.3
 -------------

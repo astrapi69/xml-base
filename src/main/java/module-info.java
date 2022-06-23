@@ -25,4 +25,11 @@
 module xml.base {
 	requires java.xml;
 	requires throwable;
+	exports io.github.astrapi69.xml.parser;
+	exports io.github.astrapi69.xml.resourcebundle;
+	exports io.github.astrapi69.xml.sax.factory;
+	exports io.github.astrapi69.xml.sax.handler;
+	exports io.github.astrapi69.xml.transform;
+	exports io.github.astrapi69.xml.transform.dom;
+	exports io.github.astrapi69.xml.xpath;
 }
