@@ -24,6 +24,7 @@
  */
 package io.github.astrapi69.xml.sax.handler;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -113,6 +114,11 @@ public class TemplateHandlerTest
 
 		handler.startElement("", "", "html", null);
 		assertNotNull(handler);
+		String actual;
+		String expected;
+		actual = handler.getName("", "foo");
+		expected = "foo";
+		assertEquals(expected, actual);
 	}
 
 }
