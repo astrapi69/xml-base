@@ -193,15 +193,36 @@ public class XmlResourceBundleControlTest
 		String format;
 		ClassLoader loader;
 		boolean reload;
+		String baseName;
+		NullPointerException exception;
 
+		baseName = "foo";
 		locale = Locale.GERMAN;
 		format = "xml";
 		loader = ClassExtensions.getClassLoader();
 		reload = true;
 
-		NullPointerException exception = Assertions.assertThrows(NullPointerException.class, () -> {
+		exception = Assertions.assertThrows(NullPointerException.class, () -> {
 			// create the bundle over the factory method...
 			xmlResourceBundleControl.newBundle(null, locale, format, loader, reload);
+		});
+		Assertions.assertEquals(NullPointerException.class, exception.getClass());
+
+		exception = Assertions.assertThrows(NullPointerException.class, () -> {
+			// create the bundle over the factory method...
+			xmlResourceBundleControl.newBundle(baseName, null, format, loader, reload);
+		});
+		Assertions.assertEquals(NullPointerException.class, exception.getClass());
+
+		exception = Assertions.assertThrows(NullPointerException.class, () -> {
+			// create the bundle over the factory method...
+			xmlResourceBundleControl.newBundle(baseName, locale, null, loader, reload);
+		});
+		Assertions.assertEquals(NullPointerException.class, exception.getClass());
+
+		exception = Assertions.assertThrows(NullPointerException.class, () -> {
+			// create the bundle over the factory method...
+			xmlResourceBundleControl.newBundle(baseName, locale, format, null, reload);
 		});
 		Assertions.assertEquals(NullPointerException.class, exception.getClass());
 	}

@@ -119,9 +119,8 @@ public abstract class WriterHandler extends DefaultHandler
 	 */
 	private void insertNewLine() throws SAXException
 	{
-		RuntimeExceptionDecorator.decorate(() -> {
-			writer.write(System.getProperty("line.separator"));
-		});
+		RuntimeExceptionDecorator
+			.decorate(() -> writer.write(System.getProperty("line.separator")));
 	}
 
 	/**
@@ -145,27 +144,24 @@ public abstract class WriterHandler extends DefaultHandler
 
 		String elementName = simpleName;
 
-		if ("".equals(elementName))
+		if (elementName.isEmpty())
 		{
 			elementName = qualifiedName;
 		}
 
 		write("<" + elementName);
 
-		if (attributes != null)
+		for (int i = 0; i < attributes.getLength(); i++)
 		{
-			for (int i = 0; i < attributes.getLength(); i++)
+			String attributeName = attributes.getLocalName(i);
+
+			if ("".equals(attributeName))
 			{
-				String attributeName = attributes.getLocalName(i);
-
-				if ("".equals(attributeName))
-				{
-					attributeName = attributes.getQName(i);
-				}
-
-				write(" ");
-				write(attributeName + "=\"" + attributes.getValue(i) + "\"");
+				attributeName = attributes.getQName(i);
 			}
+
+			write(" ");
+			write(attributeName + "=\"" + attributes.getValue(i) + "\"");
 		}
 
 		write(">");
