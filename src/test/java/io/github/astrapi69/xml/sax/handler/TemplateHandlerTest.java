@@ -119,6 +119,9 @@ public class TemplateHandlerTest
 		actual = handler.getName("", "foo");
 		expected = "foo";
 		assertEquals(expected, actual);
+		actual = handler.getName("bar", "foo");
+		expected = "bar";
+		assertEquals(expected, actual);
 	}
 
 }
