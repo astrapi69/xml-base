@@ -7,7 +7,7 @@ Version 1.5-SNAPSHOT
 ADDED:
 
 - new enum class NodeType for determine the type of org.w3c.dom.Node object
-- new bean classes for tag representation 
+- new bean classes for tag representation
 - new test dependency silly-bean in version 2
 - new test dependency velocity-extensions in version 1.5
 - new test dependency velocity in version 1.7
@@ -15,7 +15,7 @@ ADDED:
 
 CHANGED:
 
-- update of gradle to new version 7.6-rc-1
+- update of gradle to new version 7.6-rc-2
 - update of gradle plugin dependency com.github.ben-manes.versions.gradle.plugin to new minor version 0.43.0
 - update of gradle-plugin dependency of 'io.freefair.gradle:lombok-plugin' in version 6.5.1
 - update of gradle-plugin dependency of 'com.diffplug.spotless:spotless-plugin-gradle' in version 6.11.0
