@@ -4,6 +4,15 @@
 Version 1.5-SNAPSHOT
 -------------
 
+ADDED:
+
+- new enum class NodeType for determine the type of org.w3c.dom.Node object
+- new bean classes for tag representation 
+- new test dependency silly-bean in version 2
+- new test dependency velocity-extensions in version 1.5
+- new test dependency velocity in version 1.7
+- new test dependency equalsverifier in version 3.11
+
 CHANGED:
 
 - update of gradle to new version 7.6-rc-1
