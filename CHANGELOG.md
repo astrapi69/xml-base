@@ -20,7 +20,7 @@ CHANGED:
 - update of gradle-plugin dependency of 'io.freefair.gradle:lombok-plugin' in version 6.5.1
 - update of gradle-plugin dependency of 'com.diffplug.spotless:spotless-plugin-gradle' in version 6.11.0
 - update of dependency throwable to new minor version 2.3
-- update of test dependency file-worker to new minor version 11.5
+- update of test dependency file-worker to new patch version 11.5.1
 - update of test dependency junit-jupiter-api to new minor version 5.9.1
 - update of test dependency jobj-core to new major version 7
 - update of test dependency silly-collection to new minor version 20.1

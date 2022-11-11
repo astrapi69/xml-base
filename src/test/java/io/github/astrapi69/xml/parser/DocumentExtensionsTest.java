@@ -152,6 +152,10 @@ public class DocumentExtensionsTest
 			+ "        <gender>Female</gender>\n" + "        \t\t\n"
 			+ "        <role>Manager</role>\n" + "        \t\n" + "    </Customer>\n" + "    \n"
 			+ "</Customers>\n";
+		actual = actual.replace("\r", "").replace("\n", "").replace("\t", "").replace(" ", "")
+			.trim();
+		expected = expected.replace("\r", "").replace("\n", "").replace("\t", "").replace(" ", "")
+			.trim();
 		assertEquals(expected, actual);
 
 		actual = DocumentExtensions.toString(document, false);
@@ -165,6 +169,10 @@ public class DocumentExtensionsTest
 			+ "\t<Customer id=\"4\">\n" + "\t\t<age>28</age>\n" + "\t\t<name>Tanja</name>\n"
 			+ "\t\t<gender>Female</gender>\n" + "\t\t<role>Manager</role>\n" + "\t</Customer>\n"
 			+ "</Customers>";
+		actual = actual.replace("\r", "").replace("\n", "").replace("\t", "").replace(" ", "")
+			.trim();
+		expected = expected.replace("\r", "").replace("\n", "").replace("\t", "").replace(" ", "")
+			.trim();
 		assertEquals(expected, actual);
 	}
 
