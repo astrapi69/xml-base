@@ -1,8 +1,8 @@
 /**
  * The MIT License
- *
+ * <p>
  * Copyright (C) 2021 Asterios Raptis
- *
+ * <p>
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
@@ -10,10 +10,10 @@
  * distribute, sublicense, and/or sell copies of the Software, and to
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
- *
+ * <p>
  * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
- *
+ * <p>
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -35,7 +35,7 @@ import java.util.ResourceBundle;
  * The class {@link XmlResourceBundle} offer an alternative to the {@link ResourceBundle} classes
  * since they do not support non-ANSI character sets. The intended use for this code is to enable
  * multi-language support.
- * 
+ *
  * @see ResourceBundle
  */
 public class XmlResourceBundle extends ResourceBundle
@@ -46,7 +46,7 @@ public class XmlResourceBundle extends ResourceBundle
 
 	/**
 	 * Instantiates a new XmlResourceBundle.
-	 * 
+	 *
 	 * @param inputStream
 	 *            the stream
 	 * @throws IOException
