@@ -79,6 +79,10 @@ public class NodeExtensionsTest
 		expected = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Customer id=\"1\">\n"
 			+ "\t\t<age>34</age>\n" + "\t\t<name>John</name>\n" + "\t\t<gender>Male</gender>\n"
 			+ "\t\t<role>Cpp Developer</role>\n" + "\t</Customer>";
+		actual = actual.replace("\r", "").replace("\n", "").replace("\t", "").replace(" ", "")
+			.trim();
+		expected = expected.replace("\r", "").replace("\n", "").replace("\t", "").replace(" ", "")
+			.trim();
 		assertEquals(expected, actual);
 	}
 
@@ -136,6 +140,10 @@ public class NodeExtensionsTest
 			+ "            <gender>Female</gender>\n" + "            \t\t\t\n"
 			+ "            <role>Manager</role>\n" + "            \t\t\n" + "        </Customer>\n"
 			+ "        \t\n" + "    </Customers>\n" + "    \n" + "</Company>\n";
+		actual = actual.replace("\r", "").replace("\n", "").replace("\t", "").replace(" ", "")
+			.trim();
+		expected = expected.replace("\r", "").replace("\n", "").replace("\t", "").replace(" ", "")
+			.trim();
 		assertEquals(expected, actual);
 	}
 
@@ -177,6 +185,10 @@ public class NodeExtensionsTest
 			+ "\t</Customer><?xml version=\"1.0\" encoding=\"UTF-8\"?><Customer id=\"4\">\n"
 			+ "\t\t<age>28</age>\n" + "\t\t<name>Tanja</name>\n" + "\t\t<gender>Female</gender>\n"
 			+ "\t\t<role>Manager</role>\n" + "\t</Customer>";
+		actual = actual.replace("\r", "").replace("\n", "").replace("\t", "").replace(" ", "")
+			.trim();
+		expected = expected.replace("\r", "").replace("\n", "").replace("\t", "").replace(" ", "")
+			.trim();
 		assertEquals(expected, actual);
 	}
 
