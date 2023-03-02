@@ -4,7 +4,18 @@
 Version 1.6-SNAPSHOT
 -------------
 
+CHANGED:
 
+- update gradle to new version 8.0.1
+- update of gradle-plugin dependency of 'io.freefair.gradle:lombok-plugin' in version 6.6.3
+- update of gradle plugin dependency com.github.ben-manes.versions.gradle.plugin to new minor version 0.46.0
+- update of gradle plugin dependency com.diffplug.spotless:spotless-plugin-gradle to new patch version 6.16.0
+- update of dependency lombok to new patch version 1.18.26
+- update of dependency file-worker to new minor version 11.6
+- update of test dependency silly-collection to new major version 21
+- update of test dependency silly-io to new minor version 2.2
+- update of test dependency equalsverifier to new minor version 3.14
+- update of test dependency junit-jupiter-api to new minor version 5.9.2
 
 Version 1.5
 -------------
