@@ -58,13 +58,27 @@ public final class DocumentExtensions
 	 */
 	public static String toString(Document document) throws TransformerException
 	{
+		return toString(document, 4);
+	}
+
+	/**
+	 * This method creates a new {@link String} object from the given {@link Document} object
+	 *
+	 * @param document
+	 *            the {@link Document} object
+	 * @param indent
+	 *            the number for indent the xml {@link String} object
+	 * @return the new {@link String} object from the given {@link Document} object
+	 * @throws TransformerException
+	 *             is thrown if an error occurred with during the transformation process
+	 */
+	public static String toString(Document document, int indent) throws TransformerException
+	{
 		Map<String, Object> attributes;
 		Map<String, String> outputProperties;
-		int indent;
 
 		attributes = new HashMap<>();
 		outputProperties = new HashMap<>();
-		indent = 4;
 		attributes.put("indent-number", indent);
 		attributes.put(XMLConstants.ACCESS_EXTERNAL_DTD, "");
 		attributes.put(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "");

@@ -67,19 +67,9 @@ public class ChildTagPositionTest
 	public void testWithBeanTester()
 	{
 		Configuration configuration = new ConfigurationBuilder()
-			.overrideFactory("child", new Factory<Tag>()
-			{
-
-				@Override
-				public Tag create()
-				{
-					return Tag.builder().build();
-				}
-
-			}).build();
+			.overrideFactory("child", () -> Tag.builder().build()).build();
 		final BeanTester beanTester = new BeanTester();
-		beanTester.addCustomConfiguration(ChildTagPosition.class, configuration);
-		beanTester.testBean(ChildTagPosition.class);
+		beanTester.testBean(ChildTagPosition.class, configuration);
 	}
 
 	/**
