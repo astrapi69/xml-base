@@ -24,19 +24,21 @@
  */
 package io.github.astrapi69.xml.parser;
 
-import io.github.astrapi69.file.search.PathFinder;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import java.io.File;
+import java.io.IOException;
+
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.dom.DOMSource;
+
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.dom.DOMSource;
-import java.io.File;
-import java.io.IOException;
-
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import io.github.astrapi69.file.search.PathFinder;
 
 /**
  * The unit test class for the class {@link DocumentBuilderFactoryInitializer}

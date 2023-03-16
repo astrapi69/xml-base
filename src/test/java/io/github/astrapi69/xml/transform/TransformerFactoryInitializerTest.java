@@ -24,9 +24,11 @@
  */
 package io.github.astrapi69.xml.transform;
 
-import io.github.astrapi69.file.search.PathFinder;
-import org.junit.jupiter.api.Test;
-import org.meanbean.test.BeanTester;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.xml.XMLConstants;
 import javax.xml.transform.OutputKeys;
@@ -35,11 +37,11 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamSource;
-import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
+
+import io.github.astrapi69.file.search.PathFinder;
 
 /**
  * The unit test class for the class {@link TransformerFactoryInitializer}

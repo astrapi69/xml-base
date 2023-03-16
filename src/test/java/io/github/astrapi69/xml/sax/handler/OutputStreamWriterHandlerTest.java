@@ -24,22 +24,24 @@
  */
 package io.github.astrapi69.xml.sax.handler;
 
-import io.github.astrapi69.file.search.PathFinder;
-import io.github.astrapi69.io.StreamExtensions;
-import io.github.astrapi69.xml.sax.factory.ParserFactory;
-import org.junit.jupiter.api.Test;
-import org.xml.sax.SAXNotRecognizedException;
-import org.xml.sax.SAXNotSupportedException;
-
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.nio.charset.StandardCharsets;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+
+import org.junit.jupiter.api.Test;
+import org.xml.sax.SAXNotRecognizedException;
+import org.xml.sax.SAXNotSupportedException;
+
+import io.github.astrapi69.file.search.PathFinder;
+import io.github.astrapi69.io.StreamExtensions;
+import io.github.astrapi69.xml.sax.factory.ParserFactory;
 
 /**
  * The unit test class for the class {@link OutputStreamWriterHandler}

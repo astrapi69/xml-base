@@ -24,10 +24,8 @@
  */
 package io.github.astrapi69.xml.xpath;
 
-import io.github.astrapi69.xml.parser.DocumentFactory;
-import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
+import java.io.File;
+import java.io.IOException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPath;
@@ -35,8 +33,12 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
-import java.io.File;
-import java.io.IOException;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+import io.github.astrapi69.xml.parser.DocumentFactory;
 
 /**
  * The class {@link XPathExtensions} provides methods for resolve NodeList from given xml files or

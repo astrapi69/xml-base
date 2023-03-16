@@ -24,14 +24,15 @@
  */
 package io.github.astrapi69.xml.tag;
 
-import nl.jqno.equalsverifier.EqualsVerifier;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import org.junit.jupiter.api.Test;
 import org.meanbean.lang.Factory;
 import org.meanbean.test.BeanTester;
 import org.meanbean.test.Configuration;
 import org.meanbean.test.ConfigurationBuilder;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import nl.jqno.equalsverifier.EqualsVerifier;
 
 /**
  * The unit test class for the class {@link ChildTagPosition}

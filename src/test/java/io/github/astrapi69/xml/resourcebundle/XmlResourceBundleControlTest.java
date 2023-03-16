@@ -24,14 +24,10 @@
  */
 package io.github.astrapi69.xml.resourcebundle;
 
-import io.github.astrapi69.collection.iterator.EnumerationIterator;
-import io.github.astrapi69.collection.list.ListFactory;
-import io.github.astrapi69.lang.ClassExtensions;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.meanbean.test.BeanTester;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.IOException;
 import java.util.Enumeration;
@@ -40,10 +36,15 @@ import java.util.Locale;
 import java.util.Properties;
 import java.util.ResourceBundle;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
+
+import io.github.astrapi69.collection.iterator.EnumerationIterator;
+import io.github.astrapi69.collection.list.ListFactory;
+import io.github.astrapi69.lang.ClassExtensions;
 
 /**
  * The unit test class for the class {@link XmlResourceBundleControl}

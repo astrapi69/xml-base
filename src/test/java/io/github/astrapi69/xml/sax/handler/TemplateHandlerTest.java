@@ -24,28 +24,30 @@
  */
 package io.github.astrapi69.xml.sax.handler;
 
-import io.github.astrapi69.file.compare.CompareFileExtensions;
-import io.github.astrapi69.file.compare.api.IFileContentResultBean;
-import io.github.astrapi69.file.csv.CsvFileExtensions;
-import io.github.astrapi69.file.delete.DeleteFileExtensions;
-import io.github.astrapi69.file.search.PathFinder;
-import io.github.astrapi69.file.write.WriteFileExtensions;
-import org.junit.jupiter.api.Test;
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+
+import org.junit.jupiter.api.Test;
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+
+import io.github.astrapi69.file.compare.CompareFileExtensions;
+import io.github.astrapi69.file.compare.api.IFileContentResultBean;
+import io.github.astrapi69.file.csv.CsvFileExtensions;
+import io.github.astrapi69.file.delete.DeleteFileExtensions;
+import io.github.astrapi69.file.search.PathFinder;
+import io.github.astrapi69.file.write.WriteFileExtensions;
 
 /**
  * The unit test class for the class {@link TemplateHandler}

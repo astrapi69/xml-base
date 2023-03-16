@@ -24,13 +24,13 @@
  */
 package io.github.astrapi69.xml.transform.dom;
 
-import org.junit.jupiter.api.Test;
-import org.meanbean.test.BeanTester;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.dom.DOMResult;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
 
 /**
  * The unit test class for the class {@link DOMResultFactory}

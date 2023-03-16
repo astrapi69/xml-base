@@ -24,13 +24,14 @@
  */
 package io.github.astrapi69.xml.sax.handler;
 
-import io.github.astrapi69.throwable.RuntimeExceptionDecorator;
+import java.io.Writer;
+import java.util.Objects;
+
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import java.io.Writer;
-import java.util.Objects;
+import io.github.astrapi69.throwable.RuntimeExceptionDecorator;
 
 /**
  * The abstract class {@link WriterHandler}.

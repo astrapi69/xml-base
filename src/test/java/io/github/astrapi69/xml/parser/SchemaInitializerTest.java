@@ -24,15 +24,17 @@
  */
 package io.github.astrapi69.xml.parser;
 
-import io.github.astrapi69.file.search.PathFinder;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import java.io.File;
+
+import javax.xml.validation.Schema;
+
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
 import org.xml.sax.SAXException;
 
-import javax.xml.validation.Schema;
-import java.io.File;
-
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import io.github.astrapi69.file.search.PathFinder;
 
 /**
  * The unit test class for the class {@link SchemaInitializer}

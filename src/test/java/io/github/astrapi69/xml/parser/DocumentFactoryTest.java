@@ -24,13 +24,13 @@
  */
 package io.github.astrapi69.xml.parser;
 
-import org.junit.jupiter.api.Test;
-import org.meanbean.test.BeanTester;
-import org.w3c.dom.Document;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import javax.xml.parsers.ParserConfigurationException;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
+import org.w3c.dom.Document;
 
 /**
  * The unit test class for the class {@link DocumentFactory}

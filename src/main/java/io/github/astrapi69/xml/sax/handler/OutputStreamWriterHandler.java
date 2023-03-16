@@ -24,10 +24,11 @@
  */
 package io.github.astrapi69.xml.sax.handler;
 
-import io.github.astrapi69.throwable.RuntimeExceptionDecorator;
+import java.io.Writer;
+
 import org.xml.sax.SAXException;
 
-import java.io.Writer;
+import io.github.astrapi69.throwable.RuntimeExceptionDecorator;
 
 /**
  * The class {@link OutputStreamWriterHandler}

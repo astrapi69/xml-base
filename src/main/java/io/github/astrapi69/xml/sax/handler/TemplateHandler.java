@@ -24,12 +24,13 @@
  */
 package io.github.astrapi69.xml.sax.handler;
 
-import io.github.astrapi69.throwable.RuntimeExceptionDecorator;
-import org.xml.sax.SAXException;
-
 import java.io.StringWriter;
 import java.io.Writer;
 import java.util.Map;
+
+import org.xml.sax.SAXException;
+
+import io.github.astrapi69.throwable.RuntimeExceptionDecorator;
 
 /**
  * The class {@link TemplateHandler}

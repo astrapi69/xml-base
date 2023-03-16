@@ -24,20 +24,22 @@
  */
 package io.github.astrapi69.xml.parser;
 
-import io.github.astrapi69.file.delete.DeleteFileExtensions;
-import io.github.astrapi69.file.read.ReadFileExtensions;
-import io.github.astrapi69.file.search.PathFinder;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.io.File;
+import java.io.IOException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerException;
-import java.io.File;
-import java.io.IOException;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import io.github.astrapi69.file.delete.DeleteFileExtensions;
+import io.github.astrapi69.file.read.ReadFileExtensions;
+import io.github.astrapi69.file.search.PathFinder;
 
 /**
  * The unit test class for the class {@link DocumentExtensions}

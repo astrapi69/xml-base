@@ -24,25 +24,27 @@
  */
 package io.github.astrapi69.xml.xpath;
 
-import io.github.astrapi69.collection.list.ListFactory;
-import io.github.astrapi69.file.search.PathFinder;
-import org.junit.jupiter.api.Test;
-import org.meanbean.test.BeanTester;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.TransformerException;
-import javax.xml.xpath.XPathExpressionException;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.TransformerException;
+import javax.xml.xpath.XPathExpressionException;
+
+import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+import io.github.astrapi69.collection.list.ListFactory;
+import io.github.astrapi69.file.search.PathFinder;
 
 /**
  * The unit test class for the class {@link NodeExtensions}

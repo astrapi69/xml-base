@@ -24,13 +24,14 @@
  */
 package io.github.astrapi69.xml.tag;
 
-import io.github.astrapi69.collection.list.ListFactory;
-import nl.jqno.equalsverifier.EqualsVerifier;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import io.github.astrapi69.collection.list.ListFactory;
+import nl.jqno.equalsverifier.EqualsVerifier;
 
 /**
  * The unit test class for the class {@link TagAttribute}

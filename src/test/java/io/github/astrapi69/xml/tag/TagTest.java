@@ -24,16 +24,17 @@
  */
 package io.github.astrapi69.xml.tag;
 
-import io.github.astrapi69.collection.list.ListFactory;
-import io.github.astrapi69.collection.map.MapFactory;
-import nl.jqno.equalsverifier.EqualsVerifier;
-import org.junit.jupiter.api.Test;
-import org.meanbean.test.BeanTester;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
+
+import io.github.astrapi69.collection.list.ListFactory;
+import io.github.astrapi69.collection.map.MapFactory;
+import nl.jqno.equalsverifier.EqualsVerifier;
 
 /**
  * The unit test class for the class {@link Tag}

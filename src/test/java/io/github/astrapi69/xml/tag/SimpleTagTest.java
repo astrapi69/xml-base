@@ -24,21 +24,22 @@
  */
 package io.github.astrapi69.xml.tag;
 
-import io.github.astrapi69.collection.list.ListFactory;
-import io.github.astrapi69.collection.map.MapFactory;
-import io.github.astrapi69.velocity.VelocityExtensions;
-import nl.jqno.equalsverifier.EqualsVerifier;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.io.IOException;
+
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
 
-import java.io.IOException;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import io.github.astrapi69.collection.list.ListFactory;
+import io.github.astrapi69.collection.map.MapFactory;
+import io.github.astrapi69.velocity.VelocityExtensions;
+import nl.jqno.equalsverifier.EqualsVerifier;
 
 /**
  * The unit test class for the class {@link SimpleTag}

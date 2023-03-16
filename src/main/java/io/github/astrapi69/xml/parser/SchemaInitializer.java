@@ -24,12 +24,13 @@
  */
 package io.github.astrapi69.xml.parser;
 
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.SAXException;
+import java.io.File;
 
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
-import java.io.File;
+
+import org.xml.sax.ErrorHandler;
+import org.xml.sax.SAXException;
 
 /**
  * The class {@link SchemaInitializer} provides method for initialize {@link Schema} objects

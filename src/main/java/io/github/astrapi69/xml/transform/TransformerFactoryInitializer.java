@@ -24,13 +24,14 @@
  */
 package io.github.astrapi69.xml.transform;
 
+import java.io.File;
+import java.util.Map;
+
 import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamSource;
-import java.io.File;
-import java.util.Map;
 
 /**
  * The class {@link TransformerFactoryInitializer} provides method for initialize

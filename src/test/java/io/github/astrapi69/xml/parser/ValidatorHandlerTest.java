@@ -24,13 +24,13 @@
  */
 package io.github.astrapi69.xml.parser;
 
-import org.junit.jupiter.api.Test;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
+import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 
 /**
  * The unit test class for the class {@link ValidatorHandler}

@@ -24,15 +24,6 @@
  */
 package io.github.astrapi69.xml.parser;
 
-import io.github.astrapi69.xml.transform.TransformerFactoryInitializer;
-import org.w3c.dom.Document;
-
-import javax.xml.XMLConstants;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -40,6 +31,17 @@ import java.io.StringWriter;
 import java.io.Writer;
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.xml.XMLConstants;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import org.w3c.dom.Document;
+
+import io.github.astrapi69.xml.transform.TransformerFactoryInitializer;
 
 /**
  * The class {@link DocumentExtensions} provides extension methods for {@link Document} objects

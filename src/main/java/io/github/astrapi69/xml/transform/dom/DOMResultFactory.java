@@ -24,12 +24,13 @@
  */
 package io.github.astrapi69.xml.transform.dom;
 
-import io.github.astrapi69.xml.transform.TransformerFactoryInitializer;
+import java.io.StringReader;
 
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.dom.DOMResult;
 import javax.xml.transform.stream.StreamSource;
-import java.io.StringReader;
+
+import io.github.astrapi69.xml.transform.TransformerFactoryInitializer;
 
 /**
  * The factory class {@link DOMResultFactory} provides factory methods for creating

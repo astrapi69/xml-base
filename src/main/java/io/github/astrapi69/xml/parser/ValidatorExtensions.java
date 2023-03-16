@@ -24,15 +24,16 @@
  */
 package io.github.astrapi69.xml.parser;
 
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.SAXException;
+import java.io.File;
+import java.io.IOException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.validation.Schema;
 import javax.xml.validation.Validator;
-import java.io.File;
-import java.io.IOException;
+
+import org.xml.sax.ErrorHandler;
+import org.xml.sax.SAXException;
 
 /**
  * The class {@link ValidatorExtensions} can validate xml files

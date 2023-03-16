@@ -24,14 +24,15 @@
  */
 package io.github.astrapi69.xml.tag;
 
-import io.github.astrapi69.collection.map.MapFactory;
-import org.junit.jupiter.api.Test;
-import org.meanbean.test.BeanTester;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Map;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
+
+import io.github.astrapi69.collection.map.MapFactory;
 
 /**
  * The class {@link TagExtensionsTest}
