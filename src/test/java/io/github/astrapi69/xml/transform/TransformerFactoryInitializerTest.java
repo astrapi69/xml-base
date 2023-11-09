@@ -105,11 +105,13 @@ public class TransformerFactoryInitializerTest
 
 		attributes = new HashMap<>();
 		outputProperties = new HashMap<>();
+		outputProperties.put(OutputKeys.ENCODING, "UTF-8");
+		outputProperties.put(OutputKeys.OMIT_XML_DECLARATION, "yes");
+		outputProperties.put(OutputKeys.INDENT, "yes");
 		indent = 4;
 		attributes.put("indent-number", indent);
 		attributes.put(XMLConstants.ACCESS_EXTERNAL_DTD, "");
 		attributes.put(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "");
-		outputProperties.put(OutputKeys.INDENT, "yes");
 		actual = TransformerFactoryInitializer.newTransformer(attributes, outputProperties);
 		assertNotNull(actual);
 	}

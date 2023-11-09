@@ -144,8 +144,24 @@ public final class DocumentBuilderFactoryInitializer
 	 */
 	public static DocumentBuilder newDocumentBuilder() throws ParserConfigurationException
 	{
+		return newDocumentBuilder(true);
+	}
+
+	/**
+	 * Factory method for create a new {@link DocumentBuilder} object
+	 *
+	 * @param namespaceAware
+	 *            the flag if the namespace should be considered
+	 * @throws ParserConfigurationException
+	 *             if a DocumentBuilder cannot be created which satisfies the configuration
+	 *             requested.
+	 */
+	public static DocumentBuilder newDocumentBuilder(boolean namespaceAware) throws ParserConfigurationException
+	{
 		final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-		documentBuilderFactory.setNamespaceAware(true);
+		if(namespaceAware) {
+			documentBuilderFactory.setNamespaceAware(true);
+		}
 		return documentBuilderFactory.newDocumentBuilder();
 	}
 
@@ -218,7 +234,7 @@ public final class DocumentBuilderFactoryInitializer
 	public static DOMSource newDOMSource(final File xml, final ErrorHandler errorHandler)
 		throws SAXException, ParserConfigurationException, IOException
 	{
-		return new DOMSource(DocumentBuilderFactoryInitializer.parse(xml, errorHandler));
+		return newDOMSource(DocumentBuilderFactoryInitializer.parse(xml, errorHandler));
 	}
 
 	/**
@@ -239,7 +255,7 @@ public final class DocumentBuilderFactoryInitializer
 	public static DOMSource newDOMSource(final File xml)
 		throws SAXException, ParserConfigurationException, IOException
 	{
-		return new DOMSource(DocumentBuilderFactoryInitializer.parse(xml));
+		return newDOMSource(DocumentBuilderFactoryInitializer.parse(xml));
 	}
 
 	/**

@@ -81,10 +81,13 @@ public final class DocumentExtensions
 
 		attributes = new HashMap<>();
 		outputProperties = new HashMap<>();
+		outputProperties.put(OutputKeys.ENCODING, "UTF-8");
+		outputProperties.put(OutputKeys.OMIT_XML_DECLARATION, "yes");
+		outputProperties.put(OutputKeys.STANDALONE, "yes");
+		outputProperties.put(OutputKeys.INDENT, "yes");
 		attributes.put("indent-number", indent);
 		attributes.put(XMLConstants.ACCESS_EXTERNAL_DTD, "");
 		attributes.put(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "");
-		outputProperties.put(OutputKeys.INDENT, "yes");
 		Transformer transformer = TransformerFactoryInitializer.newTransformer(attributes,
 			outputProperties);
 		DOMSource domSource = DocumentBuilderFactoryInitializer.newDOMSource(document);
