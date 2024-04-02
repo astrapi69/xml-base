@@ -195,4 +195,6 @@ reports, or feature requests.
 
 ## Similar projects
 
+* [VTD-XML](https://vtd-xml.sourceforge.io/) VTD-XML: Process Huge XML Documents (Bigger than 2GB)
+
 ## Credits
