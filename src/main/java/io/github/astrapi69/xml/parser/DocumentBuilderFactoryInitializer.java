@@ -156,10 +156,12 @@ public final class DocumentBuilderFactoryInitializer
 	 *             if a DocumentBuilder cannot be created which satisfies the configuration
 	 *             requested.
 	 */
-	public static DocumentBuilder newDocumentBuilder(boolean namespaceAware) throws ParserConfigurationException
+	public static DocumentBuilder newDocumentBuilder(boolean namespaceAware)
+		throws ParserConfigurationException
 	{
 		final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-		if(namespaceAware) {
+		if (namespaceAware)
+		{
 			documentBuilderFactory.setNamespaceAware(true);
 		}
 		return documentBuilderFactory.newDocumentBuilder();

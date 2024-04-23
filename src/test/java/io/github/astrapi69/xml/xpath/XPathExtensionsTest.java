@@ -102,7 +102,7 @@ public class XPathExtensionsTest
 
 		xml = PathFinder.getRelativePath(PathFinder.getSrcTestResourcesDir(), "test-xml.xml");
 		xpathExpression = "/Customers/Customer[gender='Female']/name/text()";
-		xmlString = ReadFileExtensions.readFromFile(xml);
+		xmlString = ReadFileExtensions.fromFile(xml);
 		actual = XPathExtensions.getNodeList(xmlString, xpathExpression);
 		assertNotNull(actual);
 		assertEquals(actual.getLength(), 2);

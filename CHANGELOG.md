@@ -1,8 +1,24 @@
 ## Change log
 ----------------------
 
-Version 1.7-SNAPSHOT
+Version 2-SNAPSHOT
 -------------
+
+CHANGED:
+
+- update of jdk to version 17
+- update gradle to new version 8.7
+- update of gradle-plugin dependency of 'io.freefair.gradle:lombok-plugin' in version 8.6
+- update of gradle plugin dependency com.github.ben-manes.versions.gradle.plugin to new minor version 0.51.0
+- update of gradle-plugin dependency 'org.ajoberstar.grgit:grgit-gradle' in version 5.2.2
+- update of gradle plugin dependency com.diffplug.spotless:spotless-plugin-gradle to new patch version 6.25.0
+- update of dependency lombok to new patch version 1.18.32
+- update of test dependency jobj-core to new version 8.2
+- update of test dependency silly-collection to new major version 27
+- update of dependency file-worker to new minor version 17.1
+- update of test dependency silly-io to new version 3
+- update of test dependency equalsverifier to new version 3.16.1
+- update of test dependency junit-jupiter-api to new minor version 5.11.0-M1
 
 Version 1.6
 -------------
