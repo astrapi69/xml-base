@@ -1,19 +1,16 @@
 dependencies {
-    compileOnly("org.projectlombok:lombok:$lombokVersion")
-    annotationProcessor("org.projectlombok:lombok:$lombokVersion")
-    testCompileOnly("org.projectlombok:lombok:$lombokVersion")
-    testAnnotationProcessor("org.projectlombok:lombok:$lombokVersion")
-    implementation("io.github.astrapi69:throwable:$throwableVersion")
-    testImplementation("io.github.astrapi69:jobj-core:$jobjCoreVersion")
-    testImplementation("io.github.astrapi69:silly-collection:$sillyCollectionVersion")
-    testImplementation("io.github.astrapi69:silly-bean:$sillyBeanVersion")
-    testImplementation("xerces:xercesImpl:$xercesImplVersion")
-    testImplementation("io.github.astrapi69:silly-io:$sillyIoVersion")
-    testImplementation("io.github.astrapi69:file-worker:$fileWorkerVersion")
-    testImplementation("io.github.astrapi69:velocity-extensions:$velocityExtensionsVersion")
-    testImplementation("org.apache.velocity:velocity:$velocityVersion")
-    testImplementation("com.github.meanbeanlib:meanbean:$meanbeanVersion")
-    testImplementation("nl.jqno.equalsverifier:equalsverifier:$equalsverifierVersion")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
+    compileOnly libs.lombok
+    implementation libs.throwable
+    testImplementation libs.jobj.core
+    testImplementation libs.silly.collection
+    testImplementation libs.silly.bean
+    testImplementation libs.xercesImpl
+    testImplementation libs.silly.io
+    testImplementation libs.file.worker
+    testImplementation libs.velocity.extensions
+    testImplementation libs.velocity
+    testImplementation libs.equalsverifier
+    // Note: use of bundles...
+    testImplementation libs.bundles.unit.testing
+    testRuntimeOnly libs.junit.platform.launcher
 }

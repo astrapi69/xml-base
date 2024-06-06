@@ -1,0 +1,54 @@
+[versions]
+lombok-version = "1.18.32"
+throwable-version = "2.3"
+jobj-core-version = "8.2"
+silly-collection-version = "27"
+silly-bean-version = "2"
+xercesImpl-version = "2.12.2"
+silly-io-version = "3"
+file-worker-version = "17.1"
+velocity-extensions-version = "1.5"
+velocity-version = "1.7"
+meanbean-version = "3.0.0-M9"
+mockito-core-version = "5.12.0"
+equalsverifier-version = "3.16.1"
+gradle-plugin-grgit-version = "5.2.2"
+gradle-plugin-license-version = "0.16.1"
+gradle-plugin-lombok-version = "8.6"
+gradle-plugin-spotless-version = "7.0.0.BETA1"
+gradle-plugin-version-catalog-update-version = "0.8.4"
+gradle-plugin-versions-version = "0.51.0"
+junit-jupiter-version = "5.11.0-M2"
+junit-platform-launcher-version = "1.11.0-M2"
+
+[libraries]
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok-version"}
+throwable = { module = "io.github.astrapi69:throwable", version.ref = "throwable-version"}
+jobj-core = { module = "io.github.astrapi69:jobj-core", version.ref = "jobj-core-version"}
+silly-collection = { module = "io.github.astrapi69:silly-collection", version.ref = "silly-collection-version"}
+silly-bean = { module = "io.github.astrapi69:silly-bean", version.ref = "silly-bean-version"}
+xercesImpl = { module = "xerces:xercesImpl", version.ref = "xercesImpl-version"}
+silly-io = { module = "io.github.astrapi69:silly-io", version.ref = "silly-io-version"}
+file-worker = { module = "io.github.astrapi69:file-worker", version.ref = "file-worker-version"}
+velocity-extensions = { module = "io.github.astrapi69:velocity-extensions", version.ref = "velocity-extensions-version"}
+velocity = { module = "org.apache.velocity:velocity", version.ref = "velocity-version"}
+meanbean = { module = "com.github.meanbeanlib:meanbean", version.ref = "meanbean-version"}
+equalsverifier = { module = "nl.jqno.equalsverifier:equalsverifier", version.ref = "equalsverifier-version"}
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter-version" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junit-platform-launcher-version" }
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito-core-version" }
+
+[bundles]
+unit-testing = [
+    "junit-jupiter",
+    "meanbean",
+    "mockito-core",
+]
+
+[plugins]
+gradle-versions-plugin = { id = "com.github.ben-manes.versions", version.ref = "gradle-plugin-versions-version" }
+grgit-gradle = { id = "org.ajoberstar.grgit", version.ref = "gradle-plugin-grgit-version" }
+license-gradle-plugin = { id = "com.github.hierynomus.license", version.ref = "gradle-plugin-license-version" }
+lombok-plugin = { id = "io.freefair.lombok", version.ref = "gradle-plugin-lombok-version" }
+spotless-plugin-gradle = { id = "com.diffplug.spotless", version.ref = "gradle-plugin-spotless-version" }
+versionCatalogUpdate = { id = "nl.littlerobots.version-catalog-update", version.ref = "gradle-plugin-version-catalog-update-version" }
