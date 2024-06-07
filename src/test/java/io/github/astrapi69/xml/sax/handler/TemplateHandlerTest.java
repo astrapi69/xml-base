@@ -44,10 +44,11 @@ import org.xml.sax.SAXException;
 
 import io.github.astrapi69.file.compare.CompareFileExtensions;
 import io.github.astrapi69.file.compare.api.IFileContentResultBean;
+import io.github.astrapi69.file.create.FileFactory;
 import io.github.astrapi69.file.csv.CsvFileExtensions;
 import io.github.astrapi69.file.delete.DeleteFileExtensions;
 import io.github.astrapi69.file.search.PathFinder;
-import io.github.astrapi69.file.write.WriteFileExtensions;
+import io.github.astrapi69.file.write.StoreFileExtensions;
 
 /**
  * The unit test class for the class {@link TemplateHandler}
@@ -84,12 +85,12 @@ public class TemplateHandlerTest
 		{
 			e.printStackTrace();
 		}
-		final File output = new File(testResDir, "test-generated" + ".html");
+		final File output = FileFactory.newFile(testResDir, "test-generated" + ".html");
 		if (!output.exists())
 		{
 			output.createNewFile();
 		}
-		WriteFileExtensions.writeStringToFile(output, writer.toString(), "UTF-8");
+		StoreFileExtensions.toFile(output, writer.toString(), "UTF-8");
 
 		final IFileContentResultBean bean = CompareFileExtensions.compareFiles(output, expected);
 		assertTrue(bean.getContentEquality());
