@@ -5,6 +5,8 @@ dependencies {
     testCompileOnly libs.lombok
     testAnnotationProcessor libs.lombok
 
+    implementation libs.throwable
+
     testImplementation libs.jobj.core
     testImplementation libs.silly.collection
     testImplementation libs.silly.bean

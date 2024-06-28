@@ -21,7 +21,7 @@
 module xml.base
 {
 	requires java.xml;
-	requires throwable;
+	requires io.github.astrapisixtynine.throwable;
 
 	exports io.github.astrapi69.xml.parser;
 	exports io.github.astrapi69.xml.resourcebundle;
