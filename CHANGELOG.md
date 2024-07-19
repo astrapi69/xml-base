@@ -19,6 +19,7 @@ CHANGED:
 - update of dependency throwable to new major version 3
 - update of test dependency file-worker to new minor version 17.2
 - update of test dependency silly-io to new version 3.1
+- replaced obsolete package.html with package-info.java files
 
 Version 2
 -------------
