@@ -55,3 +55,5 @@ tasks.named("test") {
 }
 
 test.dependsOn(spotlessApply)
+
+apply from: "gradle/test-results-complete.gradle"
